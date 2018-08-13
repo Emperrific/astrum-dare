@@ -84,7 +84,7 @@ screen freak_parent:
     timer 0.5 action If(not shaking, [Show("freak"),SetVariable("shaking", True)], NullAction()) repeat True
 
 screen freak:
-    timer next_shake action [Function(update_next_shake), Play("asteroid", "asteroid_impact.mp3", loop=False), Hide("freak")]
+    timer next_shake action [Function(update_next_shake), Play("asteroid", "Asteroid_Impact_Louder.ogg", loop=False), Hide("freak")]
 
 screen freak_mid:
     $ delay = 0.05

@@ -1,20 +1,25 @@
 label choices:
 
-    Choice:
-    Help Zeni
-    Help Misha
-    Help Aran
-    Help Fera
+    menu:
+        "Help Zeni" if talk_zeni == False:
+            jump help_zeni
+        "Help Misha" if talk_misha == False:
+            jump help_misha
+        "Help Aran" if talk_aran == False:
+            jump help_aran
+        "Help Fera:" if talk_fera == False:
+            jump help_fera
 
-    ⛖ After 3 are chosen, go to Power Cell Found
+    # After 3 are chosen, go to Power Cell Found
 
-    ⚑ If Fera is ignored, triggers Fera finding and stashing a weapon.
-    This leads to a bad ending if you ignore Fera and then leave her behind. She will attempt to kill you out of spite and Aran will die after jumping in front, leaving you to only escape with Zeni and/or Misha.
+    # If Fera is ignored, triggers Fera finding and stashing a weapon.
+    #This leads to a bad ending if you ignore Fera and then leave her behind. She will attempt to kill you out of spite and Aran will die after jumping in front, leaving you to only escape with Zeni and/or Misha.
 
 
-    -----------------------
 
-    🡆 If "Help Zeni" is chosen:
+label help_zeni:
+    $talk_zeni = True
+    $chat_counter += 1
 
     "I decide to give Zeni a hand."
 
@@ -36,7 +41,7 @@ label choices:
 
     z "What is it that you do on the station?"
 
-    p  I'm a pilot. A fairly new graduate actually. Only been here about 3 weeks."
+    p  "I'm a pilot. A fairly new graduate actually. Only been here about 3 weeks."
 
     z "That would explain why I don't recognize your name."
 
@@ -50,107 +55,113 @@ label choices:
 
     "Let’s try a more positive question."
 
-    Choice:
-    Ask him about his family.
-    Ask him why he joined security.
+    menu:
+        "Ask him about his family.":
+            p "So, um, do you have a family?"
 
-    🡆 Family
+            z "A daughter. She’s 6."
 
-    p "So, um, do you have a family?"
+            "But no mention of a mother... Probably best I if didn’t pry."
 
-    z "A daughter. She’s 6."
+            p "Do you mind if I ask her name?"
 
-    "But no mention of a mother... Probably best I if didn’t pry."
+            "Zeni sets down a steel crate and digs through it as he answers my question."
 
-    p "Do you mind if I ask her name?"
+            z "Racia."
 
-    "Zeni sets down a steel crate and digs through it as he answers my question."
+            z "She’s a little songstress, just like her mother was."
 
-    z "Racia."
+            "With a sigh, Zeni leans against his box and gazes at me."
 
-    z "She’s a little songstress, just like her mother was."
+            z "What about you?"
 
-    "With a sigh, Zeni leans against his box and gazes at me."
+            p "Oh... I was raised in a communal domicile on Jenri Alpha."
 
-    z "What about you?"
+            z "So you were an orphan, then. I’m sorry."
 
-    p "Oh... I was raised in a communal domicile on Jenri Alpha."
+            p "Don’t be. I never knew my parents."
 
-    z "So you were an orphan, then. I’m sorry."
+            "Zeni balls his fists and grimaces."
 
-    p "Don’t be. I never knew my parents."
+            z "The war?"
 
-    "Zeni balls his fists and grimaces."
+            p "Pirates."
 
-    z "The war?"
+            z "That’s even worse. I sure hope they did right by you on Jenri Alpha."
 
-    p "Pirates."
+            p "It wasn’t a luxurious life, but it wasn’t a miserable one."
 
-    z "That’s even worse. I sure hope they did right by you on Jenri Alpha."
+            "Melancholy washes over me as a memory from my early teens comes flooding back."
 
-    p "It wasn’t a luxurious life, but it wasn’t a miserable one."
+            "A young Corsi, wide-eyed, excitable, and without nearly as many piercings, is helping me dig through a junkyard. Eventually, he says, we’ll find enough parts to build us a ship. Then we can go wherever we want."
 
-    "Melancholy washes over me as a memory from my early teens comes flooding back."
+            "But then I blink, and the moment of bittersweet nostalgia is gone."
 
-    "A young Corsi, wide-eyed, excitable, and without nearly as many piercings, is helping me dig through a junkyard. Eventually, he says, we’ll find enough parts to build us a ship. Then we can go wherever we want."
+            "Zeni must notice my upset, because he nods quietly and goes back to searching."
 
-    "But then I blink, and the moment of bittersweet nostalgia is gone."
+            z "I’m almost done here. You should check in with the others. Thanks for the chat."
 
-    "Zeni must notice my upset, because he nods quietly and goes back to searching."
 
-    z "I’m almost done here. You should check in with the others. Thanks for the chat."
+        "Ask him why he joined security.":
 
-    🡅 Return to choices, Zeni removed from options.
+            p "So, um, what made you go into a career in station security?"
 
-    🡆 Security
+            z "The pay. Plus I’m told I have an aptitude. Supposedly."
 
-    p "So, um, what made you go into a career in station security?"
+            "Zeni winks at me and flexes his arm."
 
-    z "The pay. Plus I’m told I have an aptitude. Supposedly."
+            z "What do you think?"
 
-    "Zeni winks at me and flexes his arm."
+            p "I think you’re full of yourself."
 
-    z "What do you think?"
+            z "Just a little."
 
-    p "I think you’re full of yourself."
+            p "So you didn’t aspire to protect the innocent or something like that?"
 
-    z "Just a little."
+            z "Maybe you have me confused with Governor Ceani."
 
-    p "So you didn’t aspire to protect the innocent or something like that?"
+            "He lets out a warm, deep laugh that’s soft on the ears."
 
-    z "Maybe you have me confused with Governor Ceani."
+            z "There {i}is{/i} someone I need to protect. But the only way I can protect her is by being here."
 
-    "He lets out a warm, deep laugh that’s soft on the ears."
+            p "What do you mean?"
 
-    z "There *is* someone I need to protect. But the only way I can protect her is by being here."
+            z "It’s complicated. What about you? Did you dream of flying transports back and forth?"
 
-    p "What do you mean?"
+            p "Actually... yes. This guy I grew up with got me into scrappers and we..."
 
-    z "It’s complicated. What about you? Did you dream of flying transports back and forth?"
+            "A few tears slide down my face without warning. I wipe them away quickly."
 
-    p "Actually... yes. This guy I grew up with got me into scrappers and we..."
+            z "...Oh."
 
-    "A few tears slide down my face without warning. I wipe them away quickly."
+            "Zeni seems to understand and accept my sudden wave of emotion, closing his eyes and giving a solemn nod."
 
-    z "...Oh."
+            "For a moment, neither of us know what to say. The heavy weight of lost life bears down on our mundane conversation."
 
-    "Zeni seems to understand and accept my sudden wave of emotion, closing his eyes and giving a solemn nod."
+            z "Let’s focus on keeping ourselves alive for now. There will be time for everything else later."
 
-    "For a moment, neither of us know what to say. The heavy weight of lost life bears down on our mundane conversation."
+            "Zeni points out a particularly large crate."
 
-    z "Let’s focus on keeping ourselves alive for now. There will be time for everything else later."
+            z "Just this last one and I’m done. Can you help me drag it over?"
 
-    "Zeni points out a particularly large crate."
+            "We heave both ends and finally get it open."
 
-    z "Just this last one and I’m done. Can you help me drag it over?"
+            z "Alright. Got it from here. You should check in with the others. Thanks for the chat."
 
-    "We heave both ends and finally get it open."
+    if chat_counter == 3:
+        jump power_up
+    else:
+        jump choices
 
-    z "Alright. Got it from here. You should check in with the others. Thanks for the chat."
 
-    🡅 Return to choices, Zeni removed from options.
 
-    🡆 If "Help Misha" is chosen:
+    # Return to choices, Zeni removed from options.
+
+
+
+label help_misha:
+    $talk_misha = True
+    $chat_counter += 1
 
     "Of all the people in this room, the most likely one to find that power cell is probably the woman who made it."
 
@@ -192,13 +203,13 @@ label choices:
 
     m "It’s very frustrating to find they’ve made a feeble attempt to categorize things without telling me."
 
-    m "The new guidelines say to organize by commission date instead of creation date, Dr. Ventai!"
+    m "{i}The new guidelines say to organize by commission date instead of creation date, Dr. Ventai!{/i}"
 
-    m "You put a grismetal compound in the section for steel hybrids, Dr. Ventai!"
+    m "{i}You put a grismetal compound in the section for steel hybrids, Dr. Ventai!{/i}"
 
     "The tone she uses to imitate her research aides is whiny and mocking. I’d hate to be those guys."
 
-    m "Dr. Ventai! Dr. Ventai! I swear just hearing that makes me livid."
+    m "{i}Dr. Ventai! Dr. Ventai!{/i} I swear just hearing that makes me livid."
 
     "I’m not even quite sure what to say. I get the feeling I should just let her talk it out."
 
@@ -212,79 +223,77 @@ label choices:
 
     "Maybe she just needs some help calming down."
 
-    Choice:
-    Explain that organization would have solved this problem.
-    Offer to check the lockers while she takes a short break.
+    menu:
+        "Explain that organization would have solved this problem.":
+            p "Misha, if you’d be willing to consider an idea..."
 
-    🡆 Explain that organization would have solved this problem.
+            m "Out with it, then. The seconds are drifting away."
 
-    p "Misha, if you’d be willing to consider an idea..."
+            p "Maybe the organizational techniques might end up benefiting you if you didn’t fight back against your aides’ work."
 
-    m "Out with it, then. The seconds are drifting away."
+            "Misha scowls at me, refusing to acknowledge my statement with more than a scoff. She closes her current locker with extra force, and it clangs shut."
 
-    p "Maybe the organizational techniques might end up benefiting you if you didn’t fight back against your aides’ work."
+            p "No, really; think about it. If you stepped back, let them organize the whole place, and adhered to the structure, you’d know where everything was all the time."
 
-    "Misha scowls at me, refusing to acknowledge my statement with more than a scoff. She closes her current locker with extra force, and it clangs shut."
+            m "I know where everything is when {i}I{/i} am the last to have handled it."
 
-    p "No, really; think about it. If you stepped back, let them organize the whole place, and adhered to the structure, you’d know where everything was all the time."
+            p "But you can’t make everything alone, right?"
 
-    m "I know where everything is when *I* am the one to have last handled it."
+            "What was that word she used?"
 
-    p "But you can’t make everything alone, right?"
+            p "You need your... peons... to get everything done."
 
-    "What was that word she used?"
+            p "And so letting them organize things might keep you both sane."
 
-    p "You need your... peons... to get everything done."
+            "Misha crosses her arms, deep in thought. I must have passed some sort of test in her eyes, because her tone becomes warmer."
 
-    p "And so letting them organize things might keep you both sane."
+            m "You’re leagues wiser than I originally believed you would be. I respect that."
 
-    "Misha crosses her arms, deep in thought. I must have passed some sort of test in her eyes, because her tone becomes warmer."
+            m "That being said, hypothetical musings will not save our lives."
 
-    m "You’re leagues wiser than I originally believed you would be. I respect that."
+            "She closes the last locker gently, tucking her pen light into her bun."
 
-    m "That being said, hypothetical musings will not save our lives."
+            m "I am finished here. You may leave."
 
-    "She closes the last locker gently, tucking her pen light into her bun."
+            "Misha doesn’t say another word, but her slight smile is good enough for me."
+        "Offer to check the lockers while she takes a short break.":
+            p "Misha, do you want to trade?"
 
-    m "I am finished here. You may leave."
+            m "Trade?"
 
-    "Misha doesn’t say another word, but her slight smile is good enough for me."
+            p "Yes. I’ll search the lockers, and you can go through this storage unit I found."
 
-    🡅 Return to choices, Misha removed from options.
+            "Misha looks as though she’s trying to discern my ulterior motives. Finding nothing concrete, she merely pauses and holds out her pen light in my direction."
 
-    🡆 Offer to check the lockers while she takes a short break.
+            m "Very well. I’d much prefer to be off my feet."
 
-    p "Misha, do you want to trade?"
+            "I stand up and start searching the lockers for the power cell."
 
-    m "Trade?"
+            "Misha seems quite pleased to have escaped this task. She catches me eyeing her and quickly smiles before looking away again."
 
-    p "Yes. I’ll search the lockers, and you can go through this storage unit I found."
+            "I close the last locker a few moments later. No luck."
 
-    "Misha looks as though she’s trying to discern my ulterior motives. Finding nothing concrete, she merely pauses and holds out her pen light in my direction."
+            m "Thank you... [player_name], was it?"
 
-    m "Very well. I’d much prefer to be off my feet."
+            p "Yes. You’re welcome."
 
-    "I stand up and start searching the lockers for the power cell."
+            "Misha doesn’t say another word, but her thanks is good enough for me."
+    if chat_counter == 3:
+        jump power_up
+    else:
+        jump choices
 
-    "Misha seems quite pleased to have escaped this task. She catches me eyeing her and quickly smiles before looking away again."
 
-    "I close the last locker a few moments later. No luck."
 
-    m "Thank you... [Player], was it?"
-
-    p "Yes. You’re welcome."
-
-    "Misha doesn’t say another word, but her thanks is good enough for me."
-
-    🡅 Return to choices, Misha removed from options.
-
-    🡆 If "Help Aran" is chosen:
+label help_aran:
+    $talk_aran = True
+    $chat_counter += 1
 
     "Aran seems to be the most pleasant of the bunch. I’ll go help him."
 
     "As I expected, Aran greets me graciously when I walk over to his part of the room."
 
-    a "[player]. What can I do for you?"
+    a "[player_name]. What can I do for you?"
 
     "His movements are graceful and effortless, and his smile radiates positive energy. Somehow or another, I find myself instinctively smiling in return."
 
@@ -322,7 +331,7 @@ label choices:
 
     "Is he saying I look stupid? No way. Right?"
 
-    p "I’ll have you know, *Governor*, I’m a pilot. And I do know what a power cell for a ship looks like. They’ve been standardized for 2 centuries."
+    p "I’ll have you know, {i}Governor{/i}, I’m a pilot. And I do know what a power cell for a ship looks like. They’ve been standardized for 2 centuries."
 
     a "I’m sorry... I assure you I have no ill intent. Perhaps we could look together?"
 
@@ -340,7 +349,7 @@ label choices:
 
     "Together we go through box after box and have a lively conversation."
 
-    a "Where are you from, [Player]?"
+    a "Where are you from, [player_name]?"
 
     p "Jenri Alpha."
 
@@ -358,7 +367,7 @@ label choices:
 
     "Aran’s voice lowers to a strong whisper."
 
-    a "If you want my opinion, off the record, I would say that *certain parties* have a vested interest in the continued existence of pirates. And that needs to change."
+    a "If you want my opinion, off the record, I would say that {i}certain parties{/i} have a vested interest in the continued existence of pirates. And that needs to change."
 
     "Aran frowns before grabbing a particularly large box off the shelf. He staggers for a moment, shaking precariously."
 
@@ -376,9 +385,14 @@ label choices:
 
     "He gives me a little wave as I get up and leave."
 
-    🡅 Return to choices, Aran removed from options.
+    if chat_counter == 3:
+        jump power_up
+    else:
+        jump choices
 
-    🡆 If "Help Fera" is chosen:
+label help_fera:
+    $talk_fera = True
+    $chat_counter += 1
 
     "Fera seems like she’s having trouble reaching the cabinets on her corner of the room."
 
@@ -386,7 +400,7 @@ label choices:
 
     "She notices me before I call out to her."
 
-    f "[Player]. Hello."
+    f "[player_name]. Hello."
 
     f "Do you need something? You must understand that I’m a bit busy."
 
@@ -458,9 +472,9 @@ label choices:
 
     "It seems like Fera’s mind is running at warp speed."
 
-    f "I’m.... gonna hold onto this."
+    f "I’m.... going to hold onto this."
 
-    "Oh, no. No. A weapon is the *last* thing we need in this scenario."
+    "Oh, no. No. A weapon is the {i}last{/i} thing we need in this scenario."
 
     p "Fera. No. You don’t need that."
 
@@ -504,11 +518,16 @@ label choices:
 
     f "But we’ve wasted enough time. The power cell is not here. We need to move on."
 
-    🡅 Return to choices, Fera removed from options.
+    if chat_counter == 3:
+        jump power_up
+    else:
+        jump choices
 
-    -----
 
-    ⛖ Power Cell Found
+
+
+
+label power_up:
 
     "No one’s having any luck, and the mood in the room has started to get desperate."
 
@@ -516,23 +535,23 @@ label choices:
 
     "All this stuff will be reduced to debris soon, anyway. At this point we’re all throwing things and ripping open boxes."
 
-    [play alarm sound]
+    #[play alarm sound]
 
-    [display red light fade]
+    #[display red light fade]
 
     ai "Warning: Catastrophic damage to multiple sectors detected."
 
     ai "Estimated time before asteroid storm reaches critical proximity: 23 minutes."
 
-    Just as the voice starts to fade, I hear a shout of triumph.
+    "Just as the voice starts to fade, I hear a shout of triumph."
 
-    m "Hah! I KNEW it!"
+    m "Hah! I {i}knew{/i} it!"
 
     "Everyone scrambles to Misha’s side of the room."
 
     p "The fuel cell. We need to go, now."
 
-    "There’s no time to celebrate. We have to install the core into a ship and board it immediately if we want to have any chance of survival.
+    "There’s no time to celebrate. We have to install the core into a ship and board it immediately if we want to have any chance of survival."
 
     "For a brief moment, no one knows what to do next. Perhaps inspired by the crisis, Aran speaks up."
 
@@ -566,7 +585,7 @@ label choices:
 
     "The room is filled with shaking heads. Guess that’s that."
 
-    a "Alright. You heard what [Player] said. Let’s all live through this. Go!"
+    a "Alright. You heard what [player_name] said. Let’s all live through this. Go!"
 
     "Aran’s command is like a firecracker; everyone sprints in their respective directions."
 
@@ -578,7 +597,7 @@ label choices:
 
     "Misha rolls her eyes at Aran’s saccharine words, but she doesn’t argue as we head out the door."
 
-    [change bg hallway with asteroids]
+    #[change bg hallway with asteroids]
 
     "We make our way into the hallway, running down it as fast as our legs can carry us."
 
@@ -598,17 +617,16 @@ label choices:
 
     "All three of us huddle around the console."
 
-    "There are three workable ships: a 10-person transport ships, a 4-person escort ship, and a 2-seater reconnaissance ship."
+    "There are three workable ships: a 10-person transport ship, a 4-person escort ship, and a 2-seater reconnaissance ship."
 
     a "Perfect! The transport ship can take everyone!"
-
     "This is the best possible outcome. All I need to do is remove the security."
 
     "Then the locks on the ship will release, the deployment alert will sound, and Zeni and Fera will know which ship to power up."
 
     "Alright. No time like the present."
 
-    [downer puzzle that you can’t win]
+    #[downer puzzle that you can’t win]
 
     m "There’s no way we can get through this in time."
 
@@ -624,11 +642,11 @@ label choices:
 
     "I need to think. I have to focus on what I remember about this..."
 
-    [puzzle for 4 man ship]
+    #[puzzle for 4 man ship]
 
-    If success 🡆 1 PERSON LEFT BEHIND ENDINGS
+    #If success 🡆 1 PERSON LEFT BEHIND ENDINGS
 
-    If fail
+    #If fail
 
     m "What happened?! What did you just do?!"
 
@@ -638,16 +656,14 @@ label choices:
 
     "This is bad. This is really bad. How could I screw up like this?"
 
-    "Six save me. All that’s left is the reconnaissance ship.
+    "Six save me. All that’s left is the reconnaissance ship."
 
     "I no longer have the luxury of failure if I want to live. Let alone save anyone else."
 
     "This is my last chance."
 
-    [puzzle for 2 man ship]
+    #[puzzle for 2 man ship]
 
-    If success 🡆 3 PEOPLE LEFT BEHIND ENDINGS
+    #If success 🡆 3 PEOPLE LEFT BEHIND ENDINGS
 
-    If fail 🡆 BAD ENDING
-
-    -----
+    #If fail 🡆 BAD ENDING

@@ -59,9 +59,9 @@ label start:
     #         "You chose choice 2"
     #     "Choice 3":
     #         "You chose choice 3"
-    # show screen freak_parent
+    # show screen Asteroid_Impact_Louder.ogg
     # pause
-    # hide screen freak_parent
+    # hide screen Asteroid_Impact_Louder.ogg
     # pause
 
     # scene space hallway at truecenter:

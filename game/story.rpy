@@ -26,6 +26,12 @@ default player_name = "Kestri"
 
 default zeni_met = False
 
+default chat_counter = 0
+default talk_zeni = False
+default talk_misha = False
+default talk_aran = False
+default talk_fera = False
+
 
 # The game starts here.
 
@@ -46,9 +52,12 @@ label story:
     call setup_sublevel(dissolve)
     pause
 
+    show screen freak_parent
+
     c "{i}Where are you now?{/i}"
 
     #[fade in tense music]
+    $ renpy.music.set_volume(.3)
     play music mus_build fadein 2
     p"I’m on my way. I’m on Sublevel B, Section, um..."
 
@@ -168,7 +177,7 @@ label story:
 
     "He’s unreachable. What the...?"
 
-    #[play alarm sound]
+
 
     #[display red light fade]
 
@@ -199,6 +208,7 @@ label story:
     "I search for the nearest set of stairs and run up them with as much speed as I can muster."
 
     #[show hallway bg]
+    call setup_hallway(fade)
 
     "Finally, I see a sign. It looks like I’m at the Life Support Center."
 
@@ -355,9 +365,6 @@ label r_and_d:
 label argument:
 
     "To my surprise, I hear what sounds like arguing."
-    $fera_name = "Fera"
-    $misha_name = "Misha"
-    $aran_name = "Aran"
 
     f "I don’t think you’re taking this even remotely seriously enough."
 
@@ -454,6 +461,7 @@ label argument:
     a"Thank you so much for opening that door. We were in quite some trouble."
 
     a"Ah, my manners! My name is Aran. Aran Ceani, governor-elect of the Saru Territories."
+    $aran_name = "Aran"
 
     "A governor? That explains the familiar face."
 
@@ -496,14 +504,17 @@ label argument:
     z"Misha, we’ve met at least 4 times..."
 
     "I’ll take that to mean that the woman in the lab coat’s name is Misha."
+    $misha_name = "Misha"
 
     m"Is that so? Hmm."
 
     f"Ah, I recognize you. Zeni Taro, right? Vice President of Security?"
+    $zeni_name = "Zeni"
 
     z"That’s me. Although I don’t think I know you."
 
     f"Fera Mycia. Charmed, I’m sure, though you’ll forgive me if we forgo the rest."
+    $fera_name = "Fera"
 
     p"Wait. Mycia as in the colony?"
 
@@ -559,9 +570,9 @@ label argument:
 
     m"Maybe we won’t be."
 
-    f"Oh, now you have an idea?"
+    f"Oh, {i}now{/i} you have an idea?"
 
-    m"Be silent, you vile woman. I’m sorry that money can’t buy you a personality."
+    m"Be silent, you vile woman. I’m sorry that all that money can’t buy you a personality."
 
     f"It sure can buy you, though."
 
