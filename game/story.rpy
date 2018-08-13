@@ -256,7 +256,9 @@ label maintenence_center:
     "I dash to the person’s side. It’s a man in a security uniform. He’s not dead... I think."
 
     p"Hey! You okay?!"
-    show zeni eyes_rest concern neutral with dissolve
+    call setup_chara("zeni", leftish, dissolve)
+    ""
+    show zeni eyes_rest concern neutral
     "Sure enough, the man stirs to life at the sound of my voice. He clutches his head and replies groggily."
     show zeni eyes_squint raised part_neutral
     z"I’m... I’m fine... what?"
