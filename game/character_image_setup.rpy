@@ -123,7 +123,7 @@ init -1 python:
         for attrs in renpy.get_available_image_attributes(img_name+"_mouth"):
             attr = attrs[0]
             word, option = attr.split('_')
-            print(img_name+"_mouth_"+ (option if word=="closed" else attr))
+            #print(img_name+"_mouth_"+ (option if word=="closed" else attr))
             renpy.image(
                 #put this in the format layeredimage expects
                 img_name+"_mouth_"+ (option if word=="closed" else attr), #only closed doesn't use the word

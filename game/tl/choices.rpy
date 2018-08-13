@@ -649,6 +649,7 @@ label power_up:
         jump one_left
 
     else:
+        pass
 
     #[puzzle for 4 man ship]
 
