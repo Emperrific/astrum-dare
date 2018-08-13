@@ -45,6 +45,8 @@ label one_left:
 
     "Misha and Aran know the score, but Zeni and Fera don’t. I don’t have time to phrase it gently..."
 
+    play music mus_tense fadeout 3 fadein 3
+
     p "Before we go, I..."
 
     p "The ship won’t fly unless I’m in it. So until we’re out of here, I’m in charge, got it?"
@@ -245,6 +247,8 @@ label three_left:
 
 
 label final_escape:
+
+    play music mus_escape fadein 5
 
     "There was no other way..."
 

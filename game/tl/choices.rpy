@@ -628,6 +628,8 @@ label power_up:
 
     #[downer puzzle that you can’t win]
 
+    play music mus_puzzle fadeout 3 fadein 3
+
     m "There’s no way we can get through this in time."
 
     "She’s right. Damn it! I pound my fist against the side of the console."
@@ -643,6 +645,7 @@ label power_up:
     "I need to think. I have to focus on what I remember about this..."
     #Puzzle for 4 person ship
     if activation_success == True:
+        $one_death = True
         jump one_left
 
     else:
@@ -653,26 +656,26 @@ label power_up:
 
     #If fail
 
-    m "What happened?! What did you just do?!"
+        m "What happened?! What did you just do?!"
 
-    "No. No, no, no, no."
+        "No. No, no, no, no."
 
-    p "The... The anti-theft lockdown engaged. It’s over. We’re not getting on that ship."
+        p "The... The anti-theft lockdown engaged. It’s over. We’re not getting on that ship."
 
-    "This is bad. This is really bad. How could I screw up like this?"
+        "This is bad. This is really bad. How could I screw up like this?"
 
-    "Six save me. All that’s left is the reconnaissance ship."
+        "Six save me. All that’s left is the reconnaissance ship."
 
-    "I no longer have the luxury of failure if I want to live. Let alone save anyone else."
+        "I no longer have the luxury of failure if I want to live. Let alone save anyone else."
 
-    "This is my last chance."
+        "This is my last chance."
 
-    if activation_success == True:
-        jump three_left
+        if activation_success == True:
+            jump three_left
 
-    else:
+        else:
 
-        jump ultra_fail
+            jump ultra_fail
 
     #[puzzle for 2 man ship]
 

@@ -5,12 +5,13 @@
 define mus_start = "music/01_weirder_things_instrumental.mp3"
 define mus_build = "music/02_illuminate_instrumental.mp3"
 define mus_sad = "<to 100>music/06_the_attic_instrumental.mp3"
+define mus_relax = "music/03_blue_hue_instrumental.mp3"
+define mus_puzzle = "music/04_runner_instrumental.mp3"
+define mus_tense = "music/05_the_seeds_of_unrest_instrumental.mp3"
+define mus_escape = "music/o7_like_an_angel_instrumental.mp3"
 
 
 define p = Character("[player_name]")
-python:
-    player_name = renpy.input("Please input your name")
-    player_name = player_name.strip()
 
 define c = Character("Corsi")
 define ai = Character("ZENTRI AI")
@@ -31,6 +32,8 @@ default talk_zeni = False
 default talk_misha = False
 default talk_aran = False
 default talk_fera = False
+default one_death = False
+default activation_success = False
 
 
 # The game starts here.
@@ -46,7 +49,7 @@ label story:
 
 
     if not player_name:
-         $player_name = "Kestri"
+         $player_name = "Serin"
     #[play crackle sound]
 
     call setup_sublevel(dissolve)
@@ -450,7 +453,7 @@ label argument:
 
 
 
-    #[fade in chill theme]
+    play  music mus_relax fadeout 3 fadein 6
 
     "Three shocked faces stare back at us, before their expressions melt into relief."
 
