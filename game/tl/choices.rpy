@@ -641,6 +641,11 @@ label power_up:
     p "Shut up, both of you!"
 
     "I need to think. I have to focus on what I remember about this..."
+    #Puzzle for 4 person ship
+    if activation_success == True:
+        jump one_left
+
+    else:
 
     #[puzzle for 4 man ship]
 
@@ -661,6 +666,13 @@ label power_up:
     "I no longer have the luxury of failure if I want to live. Let alone save anyone else."
 
     "This is my last chance."
+
+    if activation_success == True:
+        jump three_left
+
+    else:
+
+        jump ultra_fail
 
     #[puzzle for 2 man ship]
 
