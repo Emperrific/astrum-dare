@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("PipelinePuzzle")
+define config.name = _("AstrumDare")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -41,7 +41,7 @@ Character Art: Vale Magri ({a=https://www.astralore.com/}valeatory{/a})\n"""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "PipelinePuzzle"
+define build.name = "AstrumDare"
 
 
 define config.layers = [ 'lower', 'master', 'transient', 'screens', 'overlay' ]
@@ -151,7 +151,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "PipelinePuzzle-1534002940"
+define config.save_directory = "AstrumDare-1534002940"
 
 
 ## Icon ########################################################################
@@ -219,4 +219,4 @@ init python:
 ## The username and project name associated with an itch.io project, separated
 ## by a slash.
 
-# define build.itch_project = "renpytom/test-project"
+define build.itch_project = "astralore/astrum-dare"

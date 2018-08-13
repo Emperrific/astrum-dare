@@ -14,10 +14,10 @@ python:
 
 define c = Character("Corsi")
 define ai = Character("ZENTRI AI")
-define m = Character("[misha_name]", color ="#a150b6", image="misha")
-define z = Character("[zeni_name]", color="#382ea1", image="zeni")
-define f = Character("[fera_name]", color="#ce009c", image="fera")
-define a = Character("[aran_name]", color="#00cec9", image="aran")
+define m = Character("[misha_name]", color ="#f7e", image="misha")
+define z = Character("[zeni_name]", color="#78f", image="zeni")
+define f = Character("[fera_name]", color="#f7b", image="fera")
+define a = Character("[aran_name]", color="#7ff", image="aran")
 default misha_name = "...?"
 default zeni_name = "...?"
 default fera_name = "...?"

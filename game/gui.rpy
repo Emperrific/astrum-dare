@@ -59,6 +59,7 @@ define gui.text_font = "Actor-Regular.ttf"
 
 ## The font used for character names.
 define gui.name_text_font = "Actor-Regular.ttf"
+define gui.name_text_outlines = [(1, "#0002", 0,0)]
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "Actor-Regular.ttf"
@@ -469,6 +470,3 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
-
-
-

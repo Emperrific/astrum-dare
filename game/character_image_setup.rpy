@@ -1,7 +1,4 @@
 
-image zeni_mouth open_smile = renpy.easy_displayable("zeni_mouth open_neutral")
-image zeni_mouth open_smirk = renpy.easy_displayable("zeni_mouth open_neutral")
-image zeni_mouth open_frown = renpy.easy_displayable("zeni_mouth open_neutral")
 
 define config.all_character_callbacks = [speaker_callback]
 
