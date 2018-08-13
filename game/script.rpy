@@ -39,6 +39,18 @@ label start:
     #     "You succeeded"
     # else:
     #     "You dun fucked up"
+    # if not seed1.valid():
+    #     "Processor 1 has a problem"
+    # if not seed2.valid():
+    #     "Processor 2 has a problem"
+    # if not seed3.valid():
+    #     "Processor 3 has a problem"
+    # if not task1.valid():
+    #     "Task A has a problem"
+    # if not task2.valid():
+    #     "Task B has a problem"
+    # if not task3.valid():
+    #     "Task C has a problem"
     # scene space control room:
     #     function parallax_space
     # show asteroids:
@@ -74,7 +86,7 @@ label start:
 
     # call setup_environment("space hallway", "bg hallway", "asteroids pan", "overlay", fade)
     call setup_hallway(fade)
-    call setup_chara("security", leftish, easeinright)
+    #call setup_chara("security", leftish, easeinright)
     e "hiya"
 
     # call setup_environment("space control room", "bg control room", "asteroids", "overlay", dissolve)
