@@ -30,7 +30,9 @@ init python:
                 self.schedule.append((new_task, pos))
                 new_task.processor = self
                 new_task.start = pos
+                print("added")
                 return True
+            print("couldn't add")
             return False
 
         def unschedule(self, to_remove):
@@ -50,7 +52,8 @@ init python:
         def valid(self):
             for(task, start) in self.schedule:
                 end = start + task.units
-                if end > self.limits[num_active]:
+                if end > self.limits[num_active-1]:
+                    print ("Gone over limit: {} ends at {} but was required to end before {}".format(task.name, end, self.limits[num_active]))
                     return False
             return True
 
@@ -58,9 +61,9 @@ init python:
             x = drags[0].x - dropped.x
             pos = x * self.units / self.length
             if self.add(current_drag, pos):
-                drags[0].snap(dropped.x + pos * len_unit + 5, dropped.y+5, 1)
+                drags[0].snap(dropped.x + pos * len_unit + 5+10, dropped.y+5+15, .3)
             else:
-                drags[0].snap(renpy.random.randint(100,500), renpy.random.randint(100,300), 1)
+                drags[0].snap(renpy.random.randint(100,500), renpy.random.randint(100,300), .3)
 
     def turn_on(processor):
         if processor.active:
@@ -86,9 +89,11 @@ init python:
 
         def valid(self):
             if self.processor is None:
+                print ("no processor")
                 return False
             for task in self.dependencies:
                 if not task.valid() or not task.before(self):
+                    print ("failed dependency: {}".format(task.name))
                     return False
             return True
 
@@ -99,6 +104,11 @@ init python:
             store.current_drag = self
             if self.processor:
                 self.processor.unschedule(self)
+
+        def get_dep_str(self):
+            if not len(self.dependencies):
+                return None
+            return "{} is after {}".format(self.name, ", ".join((d.name for d in self.dependencies)))
 
     all_processors = []
     all_tasks = []
@@ -113,15 +123,18 @@ init python:
         for task in all_tasks:
             if task.name == name:
                 return task
-        return None       
+        return None
 
     def valid_puzzle(processors, tasks):
         for processor in processors:
+            print ("p {} {}".format(processor.name, processor.valid()))
             if not processor.valid():
                 return False
         for task in tasks:
+            print ("t {} {}".format(task.name, task.valid()))
             if not task.valid():
                 return False
+        print ("valid")
         return True
 
 default num_active = 0
@@ -130,10 +143,36 @@ default current_drag = None
 
 
 screen pipeline_puzzle(processors=[], tasks=[]):
-    
-    add "#fff"
 
-    textbutton "Launch" xalign 0.9 yalign 0.9 action Return(Function(valid_puzzle, processors, tasks))
+    #add "#fff"
+
+    frame:
+        xalign 0.9
+        yalign 0.9
+        textbutton "Launch":
+            action Return(Function(valid_puzzle,processors, tasks))
+
+    vbox:
+        xalign 0.9
+        yalign 0.1
+        xmaximum 500
+
+        frame:
+            text "To disable security protocols, fit all bars onto the powered cores while fulfilling prerequisites."
+
+        null height 20
+        frame:
+            text "Each core enabled reduces available area on all."
+
+        null height 20
+        frame:
+            vbox:
+                text "Prerequisites: "
+                for task in tasks:
+                    $s = task.get_dep_str()
+                    if s:
+                        text s
+
 
     draggroup:
         for i in range(len(tasks)):
@@ -144,8 +183,13 @@ screen pipeline_puzzle(processors=[], tasks=[]):
                 drag_name task.name
                 droppable False
                 dragged task.set_dragged
-                add task.color:
-                    size(len_unit * task.units, 20)
+                fixed:
+                    xysize(len_unit * task.units, 20)
+                    add task.color:
+                        size(len_unit * task.units, 20)
+                    text task.name:
+                        color "#000"
+                        yoffset -5
 
         for i in range(len(processors)):
             $processor = processors[i]
@@ -158,34 +202,37 @@ screen pipeline_puzzle(processors=[], tasks=[]):
                 drag_name processor.name
                 draggable False
                 dropped processor.process_drop
-                fixed:
-                    xysize(1000, 50)
-                    $p_color = "#555"
-                    if processor.active:
-                        $p_color = "#000"
-                    add p_color:
-                        size(processor_length, 10)
-                        pos(0,10)
-                    add "#e11":
-                        size(red_length,10)
-                        pos(processor_length,10)
-                    add "#e11":
-                        size(10,30)
-                        pos(processor.length,0)
-                    for j in range(num_units+1):
+                frame:
+                    fixed:
+                        offset (10,10)
+                        xysize(processor_length+red_length+(180 if i>0 else 40), 50)
+                        $p_color = "#555"
+                        if processor.active:
+                            $p_color = "#fff"
                         add p_color:
+                            size(processor_length, 10)
+                            pos(0,10)
+                        add "#e11":
+                            size(red_length,10)
+                            pos(processor_length,10)
+                        add "#e11":
                             size(10,30)
-                            pos((j * processor_length)/num_units,0)
-                    if i > 0:
-                        hbox:
-                            xalign 1.0
-                            spacing 20
-                            style_prefix "radio"
-                            textbutton "On":
-                                text_color "#000"
-                                action Function(turn_on, processor) 
-                                selected (processor.active)
-                            textbutton "Off":
-                                text_color "#000"
-                                action Function(turn_off, processor)
-                                selected not processor.active
+                            pos(processor.length,0)
+                        for j in range(num_units+1):
+                            add p_color:
+                                size(10,30)
+                                pos((j * processor_length)/num_units,0)
+                        if i > 0:
+                            frame:
+                                xalign 1.0
+                                hbox:
+                                    spacing 20
+                                    style_prefix "radio"
+                                    textbutton "On":
+                                        #text_color "#000"
+                                        action Function(turn_on, processor)
+                                        selected (processor.active)
+                                    textbutton "Off":
+                                        #text_color "#000"
+                                        action Function(turn_off, processor)
+                                        selected not processor.active

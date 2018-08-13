@@ -30,21 +30,22 @@ default cool = False
 # The game starts here.
 
 label start:
-    call setup_sublevel(dissolve)
-    $num_active = 0
-    $turn_on(seeds1[0])
-
-    $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)
-
-    if cool:
-        "You succeeded"
-    else:
-        "You dun fucked up"
-
+    # call setup_sublevel(dissolve)
+    # $num_active = 0
+    # $turn_on(seeds1[0])
+    #
+    # $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+    #
+    # if cool:
+    #     "You succeeded"
+    # else:
+    #     "You dun fucked up"
+    #
     jump story
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+
     # scene space control room:
     #     function parallax_space
     # show asteroids:
@@ -75,9 +76,6 @@ label start:
     # pause
 
     # call setup_environment("space hallway", "bg hallway", "asteroids pan", "overlay", fade)
-    # call setup_hallway(fade)
-    # call setup_chara("security", leftish, easeinright)
-    # e "hiya"
 
     # call setup_environment("space control room", "bg control room", "asteroids", "overlay", dissolve)
     # call setup_ctrl_room(dissolve)
