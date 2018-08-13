@@ -147,7 +147,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -555,20 +555,19 @@ screen about():
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
     add "options_bg.png"
-    add "about_header.png" xalign 0.26 yalign 0.12
+    add "about_header.png" pos (300, 100)
 
     grid 2 2:
-        xalign 0.73
-        yalign 0.12
-
-        imagebutton auto "back_%s.png" action Return() align (0.1,0.2)
-        imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0) offset(5,-8)
-        imagebutton auto "options_%s.png" action ShowMenu('preferences') align (0.0,1.0)
-        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align(1.0,1.0)
+        pos (800,95)
+        yspacing 5
+        imagebutton auto "back_%s.png" action Return() align(0.0,0.0)
+        imagebutton auto "load_%s.png" action ShowMenu('load') align(1.0,0.0)
+        imagebutton auto "options_%s.png" action ShowMenu('preferences') align(0.0, 1.0)
+        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align (1.0,0.0)
 
     vbox:
         xalign 0.5
-        yalign 0.5
+        yalign 0.6
         xsize 750
 
         null height 75
@@ -623,25 +622,24 @@ screen file_slots(title):
     add "options_bg.png"
 
     if title == "Load":
-        add "load_header.png" xalign 0.3 yalign 0.12
+        add "load_header.png" pos (300,100)
     else:
-        add "save_header.png" xalign 0.3 yalign 0.12
+        add "save_header.png" pos (300,100)
 
     grid 2 2:
-        xalign 0.73
-        yalign 0.12
-
-        imagebutton auto "back_%s.png" action Return() align (0.1,0.2)
+        pos (800,95)
+        yspacing 5
+        imagebutton auto "back_%s.png" action Return() align (0.0,0.0)
         if title == "Load":
             imagebutton auto "save_%s.png" action ShowMenu('save') align(1.0,0.0)
         else:
-            imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0) offset(5,-8)
+            imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0)
         imagebutton auto "options_%s.png" action ShowMenu('preferences') align (0.0,1.0)
-        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align(1.0,1.0)
+        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align(1.0,0.0)
 
     grid 3 2:
         xalign 0.5
-        yalign 0.6
+        yalign 0.65
 
         spacing 10
 
@@ -806,23 +804,22 @@ screen preferences():
 
 
     add "options_bg.png"
-    add "options_header.png" xalign 0.26 yalign 0.12
+    add "options_header.png" pos(300,100)
 
     grid 2 2:
-        xalign 0.78
-        yalign 0.12
-        xspacing 15
-        yspacing 5
+        pos (800,95)
+        xspacing 88
+        yspacing 1
 
-        imagebutton auto "back_%s.png" action Return() align (0.1,0.2)
-        imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0) offset(5,-5)
-        imagebutton auto "save_%s.png" action ShowMenu('save') align (0.0,0.5)
+        imagebutton auto "back_%s.png" action Return() align (0.0,0.0)
+        imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0)
+        imagebutton auto "save_%s.png" action ShowMenu('save') align (0.0,1.0)
         imagebutton auto "title_%s.png" action ShowMenu('main_menu') align(1.0,1.0)
 
 
     vbox:
         xalign 0.5
-        yalign 0.6
+        yalign 0.65
         spacing 30
 
         hbox:
@@ -834,8 +831,8 @@ screen preferences():
                 vbox:
                     xalign 0.5
                     yalign 0.5
-                    textbutton "Windowed" action Preference("display", "window")
-                    textbutton "Fullscreen" action Preference("display", "fullscreen")
+                    textbutton "Windowed" action Preference("display", "window") xalign 0.5
+                    textbutton "Fullscreen" action Preference("display", "fullscreen") xalign 0.5
             add "skipoptions.png"
             frame:
                 background "wrap.png"
@@ -843,8 +840,8 @@ screen preferences():
                 vbox:
                     xalign 0.5
                     yalign 0.5
-                    textbutton "Skip All" action Preference("skip", "all")
-                    textbutton "Skip Seen" action Preference("skip", "seen")
+                    textbutton "Skip All" action Preference("skip", "all") xalign 0.5
+                    textbutton "Skip Seen" action Preference("skip", "seen") xalign 0.5
 
         hbox:
             spacing 30

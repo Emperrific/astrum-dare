@@ -11,6 +11,9 @@ image yellow:
     alpha 0.03
 
 
+define tint_red = im.matrix.tint(1.0, 0.75, 0.75)
+
+
 transform overlay_transform(max_alpha):
     on show:
         alpha 0.0

@@ -19,7 +19,6 @@ image bg hallway = "hallway_windows_overlay.png"
 image space control room = "control_room_bg.png"
 image space hallway = "hallway_windows_space_bg.png"
 
-
 image security = "security.png"
 default size = (600,800)
 
@@ -75,7 +74,7 @@ label start:
     # call setup_environment("space hallway", "bg hallway", "asteroids pan", "overlay", fade)
     call setup_hallway(fade)
     call setup_chara("security", leftish, easeinright)
-    pause
+    e "hiya"
 
     # call setup_environment("space control room", "bg control room", "asteroids", "overlay", dissolve)
     call setup_ctrl_room(dissolve)
