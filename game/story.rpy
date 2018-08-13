@@ -37,6 +37,7 @@ label story:
     python:
         player_name = renpy.input("Please input your name")
         player_name = player_name.strip()
+        
 
     if not player_name:
          $player_name = "Kestri"
@@ -117,7 +118,7 @@ label story:
 
     #[play alarm sound]
 
-    #[display red light fade]
+    show alarm
 
     ai"Warning: Multiple asteroid impacts detected."
 
@@ -256,7 +257,8 @@ label maintenence_center:
     "I dash to the person’s side. It’s a man in a security uniform. He’s not dead... I think."
 
     p"Hey! You okay?!"
-    call setup_chara("zeni", leftish, dissolve)
+    show zeni eyes_rest concern neutral at leftish, parallaxed
+    with dissolve
     ""
     show zeni eyes_rest concern neutral
     "Sure enough, the man stirs to life at the sound of my voice. He clutches his head and replies groggily."
@@ -457,7 +459,7 @@ label argument:
 
     "He gives a dignified bow. I feel flattered but also a bit awkward."
 
-    p"My name is [player] Kestri. You’re welcome, but we need to hurry."
+    p"My name is [player_name] Kestri. You’re welcome, but we need to hurry."
 
     a"Oh, yes. Ah..."
 

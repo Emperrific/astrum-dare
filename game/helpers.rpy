@@ -19,8 +19,8 @@ label setup_ctrl_room(trans):
     call setup_environment("space control room", "bg control room", "asteroids", "overlay", trans)
     return
 
-label setup_chara(chara, pos, trans):
-    show expression chara at pos:
+label setup_chara(chara, name, pos, trans):
+    show expression chara at pos as name:
         function parallax_char
     with trans
     return

@@ -10,18 +10,6 @@ image yellow:
     "#e8e24c"
     alpha 0.03
 
-
-define tint_red = im.matrix.tint(1.0, 0.75, 0.75)
-
-
-transform overlay_transform(max_alpha):
-    on show:
-        alpha 0.0
-        linear 1.0 alpha max_alpha
-    on hide:
-        alpha max_alpha
-        linear 0.5 alpha 0.0
-
 image overlay:
     "blue" with Dissolve(1.5)
     choice:
@@ -45,6 +33,21 @@ image overlay:
     1.6
     repeat
 
+
+image alarm:
+    "red_alarm_overlay.png"
+    alpha 0.4
+    choice:
+        1.0
+    choice:
+        1.4
+    choice:
+        1.8
+    choice:
+        2.2
+    linear 1.5 alpha 0.6
+    linear 1.5 alpha 0.4
+    repeat
 
 image asteroid:
     "asteroid.png"
