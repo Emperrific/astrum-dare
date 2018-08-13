@@ -16,6 +16,7 @@ default task3 = Task("C", 4, "#f12")
 image bg control room = "control_room_overlay.png"
 image bg hallway = "hallway_windows_overlay.png"
 
+
 image space control room = "control_room_bg.png"
 image space hallway = "hallway_windows_space_bg.png"
 

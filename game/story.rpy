@@ -37,13 +37,13 @@ label story:
     python:
         player_name = renpy.input("Please input your name")
         player_name = player_name.strip()
-        
+
 
     if not player_name:
          $player_name = "Kestri"
     #[play crackle sound]
 
-    call setup_hallway(dissolve)
+    call setup_sublevel(dissolve)
     pause
 
     c "{i}Where are you now?{/i}"
@@ -54,7 +54,7 @@ label story:
 
     "I pause and look around, hoping to regain my bearings. I’ve been running for so long that every breath hurts, and it’s hard to read the walls."
 
-    p "Twelve. I’m in Section Twelve."
+    p "Four. I’m in Section Four."
 
     c "{i}You’ve gotta hurry! Almost everyone has boarded already.{/i}"
 
@@ -100,7 +100,7 @@ label story:
 
     c "{i}Sorry. Problem?{/i}"
 
-    p"The door to Section 11 isn’t opening!"
+    p"The door to Section Five isn’t opening!"
 
     c "{i}You’ve gotta be kidding me.{/i}"
 
@@ -140,7 +140,7 @@ label story:
 
     p"Where to?"
 
-    c "{i}If you turn around and go back through Section 10, there’s a—{/i}"
+    c "{i}If you turn around and go back through Section Three, there’s a—{/i}"
 
     "Corsi goes silent suddenly."
 
@@ -259,7 +259,7 @@ label maintenence_center:
     p"Hey! You okay?!"
     show zeni eyes_rest concern neutral at leftish, parallaxed
     with dissolve
-    ""
+
     show zeni eyes_rest concern neutral
     "Sure enough, the man stirs to life at the sound of my voice. He clutches his head and replies groggily."
     show zeni eyes_squint raised part_neutral
@@ -600,6 +600,8 @@ label argument:
     "As it stands, there is one person for each corner of the room. I find myself milling around, not sure where to go."
 
     "I should just go help someone with their share. But who?"
+
+    jump choices
 
     #Choice:
     #Help Zeni
