@@ -327,7 +327,7 @@ label maintenence_center:
     show zeni eyes_squint scared look_away
     z"Anyway... um... if there’s no more hangar, aren’t we...?"
     show zeni frown
-    "He doesn’t actually say the word ‘doomed’, but I can infer it from his tone."
+    "Screwed? Dead? Entombed in an aluminum coffin hurtling through space? He doesn't finish his sentence, but I can infer his thoughts from the tone."
     show zeni look_at
     p"Not yet. I’m heading for the auxiliary dock. There should be some small ships there."
     show zeni eyes_open raised part_neutral

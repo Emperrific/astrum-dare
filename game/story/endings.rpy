@@ -142,7 +142,7 @@ label one_left:
         z "If you care at all about atoning for this, you will {i}take care of my daughter.{/i}"
         show fera raised eyes_narrow neutral
 
-        z "Racia Taro. I was all she had. Protect her, or I swear I’ll come back from the dead."
+        z "Razia Taro. I was all she had. Protect her, or I swear I’ll come back from the dead."
 
 
         hide misha with None
@@ -599,7 +599,7 @@ label fera_lives:
 
     "Zeni holds onto her arm tightly, his voice pleading."
 
-    z "Please. I have a daughter. Racia Taro. She’s only a child."
+    z "Please. I have a daughter. Razia Taro. She’s only a child."
     show fera one_raised part_neutral eyes_open
     f "What...?"
 

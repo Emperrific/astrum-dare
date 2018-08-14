@@ -85,7 +85,7 @@ label help_zeni:
 
             "Zeni sets down a steel crate and digs through it as he answers my question."
 
-            z "Racia."
+            z "Razia."
 
             show zeni eyes_open smile relax
 
