@@ -162,7 +162,7 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         at delayed_fall_in
         xalign 0.9
         yalign 0.9
-        textbutton "Launch":
+        textbutton "Validate":
             action Return(Function(valid_puzzle,processors, tasks))
 
     vbox:
@@ -172,11 +172,11 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         xmaximum 500
 
         frame:
-            text "To disable security protocols, fit all bars onto the powered cores while fulfilling prerequisites."
+            text "To disable security protocols, fit all bars onto the powered slots while fulfilling prerequisites."
 
         null height 20
         frame:
-            text "Each core enabled reduces available area on all."
+            text "Each slot enabled reduces available area on all."
 
         null height 20
         frame:

@@ -674,9 +674,11 @@ label final_escape:
 
 label ultra_fail:
 
+    play music mus_sad fadeout 3 fadein 4
+
     "No way. I..."
 
-    "The last ship goes into emergency lockdown."
+    "The last ship goes into lockdown."
 
     show misha angry open_neutral eyes_wide at cright, parallaxed_m
     show aran scared eyes_wide at right, parallaxed_a
@@ -713,6 +715,8 @@ label ultra_fail:
     show aran look_away frown eyes_narrow
     hide alarm with Dissolve(1.5)
 
+    "Looking out across the silhouette of Mycia Beta, I counts the astroids drifting by as the air slowly becomes thinner and thinner."
+
     stop sound
 
     "I’m sorry, Corsi... but it appears I’ll be joining you after all."
@@ -722,4 +726,6 @@ label ultra_fail:
 
 label end_credits:
 
-    "Game over, suckaaa"
+    stop music fadeout 2
+
+    return

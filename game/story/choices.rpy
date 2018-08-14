@@ -221,6 +221,7 @@ label help_misha:
     $talk_misha = True
     $chat_counter += 1
 
+
     "Of all the people in this room, the most likely one to find that power cell is probably the woman who made it."
 
     "I walk over to Misha’s corner of the room cautiously. She pays no attention to me as I approach."
@@ -229,11 +230,15 @@ label help_misha:
 
     p "Hey, Misha...?"
 
+    show misha eyes_wide look_at one_raised at middle, parallaxed_m with dissolve
+
     "Misha whips around and looks me up and down with slight confusion."
 
     m "What do you want? Did you find it?"
 
     p "No, I just wanted to ask you—"
+
+    show misha eyes_narrow frown
 
     m "Waste someone else’s time if you don’t know what a fuel cell looks like."
 
@@ -241,11 +246,15 @@ label help_misha:
 
     p "I know what a fuel cell looks like. I’m a pilot."
 
+    show misha eyes_open one_raised neutral
+
     "That gets her attention. Misha stops, regarding me with interest."
 
     m "You’re a pilot? I suppose that explains why you’ve no fear of the auxiliary ships."
 
     p "Yes. And all I wanted to ask you was if you could use some help."
+
+    show misha eyes_wide raised
 
     "For some reason, Misha seems shocked that I would offer."
 
@@ -253,13 +262,21 @@ label help_misha:
 
     p "I don’t want to die any more than you do."
 
+    show misha look_away original neutral
+
     m "Fine, then. I’m sure I could delegate the more... cumbersome items to you. Have at it."
 
     "She strides over and opens up a large set of lockers on the wall."
 
+    show misha angry look_at
+
     m "My infuriating aides are very insistent that I store things in here."
 
+    show misha angry frown
+
     m "It’s very frustrating to find they’ve made a feeble attempt to categorize things without telling me."
+
+    show misha eyes_narrow
 
     m "{i}The new guidelines say to organize by commission date instead of creation date, Dr. Ventai!{/i}"
 
@@ -267,13 +284,19 @@ label help_misha:
 
     "The tone she uses to imitate her research aides is whiny and mocking. I’d hate to be those guys."
 
+    show misha eyes_squint
+
     m "{i}Dr. Ventai! Dr. Ventai!{/i} I swear just hearing that makes me livid."
 
     "I’m not even quite sure what to say. I get the feeling I should just let her talk it out."
 
     "Misha walks along the wall, shining her light into each locker quickly in search of the precious prototype."
 
+    show misha sad look_away part_frown
+
     m "Why can these bureaucrats not comprehend that these regulations only make my life exponentially more difficult?"
+
+    show misha sad eyes_rest frown
 
     m "And now, this organizational garbage is probably going to get me killed. Oh, the irony!"
 
@@ -286,13 +309,19 @@ label help_misha:
         "Explain that organization would have solved this problem.":
             p "Misha, if you’d be willing to consider an idea..."
 
+            show misha eyes_open look_at frown original
+
             m "Out with it, then. The seconds are drifting away."
 
             p "Maybe the organizational techniques might end up benefiting you if you didn’t fight back against your aides’ work."
 
+            show misha eyes_squint angry part_frown
+
             "Misha scowls at me, refusing to acknowledge my statement with more than a scoff. She closes her current locker with extra force, and it clangs shut."
 
             p "No, really; think about it. If you stepped back, let them organize the whole place, and adhered to the structure, you’d know where everything was all the time."
+
+            show misha look_away frown
 
             m "I know where everything is when {i}I{/i} am the last to have handled it."
 
@@ -300,13 +329,21 @@ label help_misha:
 
             "What was that word she used?"
 
+            show misha look_at eyes_narrow
+
             p "You need your... peons... to get everything done."
 
             p "And so letting them organize things might keep you both sane."
 
+            show misha eyes_rest concern
+
             "Misha crosses her arms, deep in thought. I must have passed some sort of test in her eyes, because her tone becomes warmer."
 
+            show misha eyes_open relax smile
+
             m "You’re leagues wiser than I originally believed you would be. I respect that."
+
+            show misha eyes_open original neutral
 
             m "That being said, hypothetical musings will not save our lives."
 
@@ -315,18 +352,29 @@ label help_misha:
             m "I am finished here. You may leave."
 
             "Misha doesn’t say another word, but her slight smile is good enough for me."
+
+            hide misha with dissolve
+
         "Offer to check the lockers while she takes a short break.":
             p "Misha, do you want to trade?"
+
+            show misha eyes_wide raised look_at
 
             m "Trade?"
 
             p "Yes. I’ll search the lockers, and you can go through this storage unit I found."
 
+            show misha concern eyes_narrow
+
             "Misha looks as though she’s trying to discern my ulterior motives. Finding nothing concrete, she merely pauses and holds out her pen light in my direction."
+
+            show misha eyes_open original
 
             m "Very well. I’d much prefer to be off my feet."
 
             "I stand up and start searching the lockers for the power cell."
+
+            show misha eyes_open relax smile
 
             "Misha seems quite pleased to have escaped this task. She catches me eyeing her and quickly smiles before looking away again."
 
@@ -337,6 +385,8 @@ label help_misha:
             p "Yes. You’re welcome."
 
             "Misha doesn’t say another word, but her thanks is good enough for me."
+
+            hide misha with dissolve
     if chat_counter == 3:
         jump power_up
     else:
@@ -352,6 +402,8 @@ label help_aran:
 
     "As I expected, Aran greets me graciously when I walk over to his part of the room."
 
+    show aran look_at raised smile at middle, parallaxed_a with dissolve
+
     a "[player_name]. What can I do for you?"
 
     "His movements are graceful and effortless, and his smile radiates positive energy. Somehow or another, I find myself instinctively smiling in return."
@@ -362,27 +414,41 @@ label help_aran:
 
     p "Need some help? I’ve looked through all there was in the central island."
 
+    show aran relax neutral
+
     a "Oh, of course, of course! Actually, if you’ll come over here..."
 
     "He subtly draws me forward with a little wave."
 
+    show aran frown concern
+
     a "Please forgive me for the facade. I’m afraid I must ask you for more than a little help."
+
+    show aran look_at part_frown
 
     a "You see... I haven’t actually a clue what this device Misha speaks of looks like."
 
     "Wow. He’s serious. He’s been pretending to look all this time without even knowing what to look for? Why?!"
 
+    show aran look_away frown
+
     "I stifle a giggle, and he looks very embarrassed."
+
+    show aran look_at
 
     a "I am well aware of how foolish this may seem to you. Unfortunately, neither of those two ladies will so much as acknowledge my question."
 
     "Ah, that’s right. If I recall, Misha and Fera were yelling at Aran when I walked in."
+
+    show aran eyes_rest angry
 
     a "Those two are near impossible to placate. I know time is running out, and I fear doing anything that might set them at each other’s throats again."
 
     "I get it now. He had everyone split up into corners to stop the bickering. It’s quite wise in its own way."
 
     p "Why didn’t you just ask me?"
+
+    show aran eyes_wide one_raised frown
 
     "Aran scratches his head sheepishly."
 
@@ -392,15 +458,23 @@ label help_aran:
 
     p "I’ll have you know, {i}Governor{/i}, I’m a pilot. And I do know what a power cell for a ship looks like. They’ve been standardized for 2 centuries."
 
+    show aran eyes_narrow concern neutral
+
     a "I’m sorry... I assure you I have no ill intent. Perhaps we could look together?"
 
     p "In the interest of time, let’s just do it this way. Grab me containers off that shelf over there and bring them over so I can look."
+
+    show aran eyes_open relax neutral
 
     a "If you’re certain that’s faster, then I can oblige."
 
     p "Trust me. It’s faster than explaining the fine details to you, and someone was going to have to carry the boxes anyway."
 
+    show aran smile
+
     "Aran smiles and does his dignified little bow again before walking over to the shelf."
+
+    hide aran with dissolve
 
     "Although I do question his motives (and in some cases, his intellect), he is extremely friendly and easy to be around."
 
@@ -408,9 +482,13 @@ label help_aran:
 
     "Together we go through box after box and have a lively conversation."
 
+    show aran look_at raised smile at middle, parallaxed_a with dissolve
+
     a "Where are you from, [player_name]?"
 
     p "Jenri Alpha."
+
+    show aran frown concern
 
     a "Ahhh, a beautiful colony. Shame about the pirate operations there."
 
@@ -422,27 +500,41 @@ label help_aran:
 
     p "Some day they’ll be driven out. Once people actually care enough."
 
+    show aran angry
+
     a "You’re a bit harsh with your words, but I agree. The law is unethically lenient towards career pirates."
 
     "Aran’s voice lowers to a strong whisper."
+
+    show aran eyes_squint look_away part_frown
 
     a "If you want my opinion, off the record, I would say that {i}certain parties{/i} have a vested interest in the continued existence of pirates. And that needs to change."
 
     "Aran frowns before grabbing a particularly large box off the shelf. He staggers for a moment, shaking precariously."
 
+    show aran eyes_wide scared
+
     p "You alright?"
+
+    show aran eyes_open scared frown
 
     a "Yes! I’ve... I’ve got it!"
 
     "After a few nerve-wracking moments, he sets the box down and sits across from me."
 
-    a "This is the last one. While it’s not a good sign that we didn’t find it, I can’t thank you enough."
+    show aran look_at concern neutral
+
+    a "This is the last one. While it’s not the best sign that we didn’t find it, I still can’t thank you enough."
 
     p "You’re welcome."
+
+    show aran look_at relax neutral
 
     a "I hope you make it through this unharmed. I hope we all do."
 
     "He gives me a little wave as I get up and leave."
+
+    hide aran with dissolve
 
     if chat_counter == 3:
         jump power_up
@@ -459,15 +551,21 @@ label help_fera:
 
     "She notices me before I call out to her."
 
+    show fera look_at one_raised at middle, parallaxed_f with dissolve
+
     f "[player_name]. Hello."
 
     f "Do you need something? You must understand that I’m a bit busy."
 
     p "Actually, I thought I’d offer you an extra pair of hands."
 
+    show fera eyes_wide smirk raised
+
     f "Well, far be it from me to turn down free labor."
 
     "Fera sits me down at a table covered with many small boxes and containers. Just how much crap does R&D have lying around? This is insane."
+
+    show fera eyes_open neutral one_raised
 
     f "While you make your way through that, humor me."
 
@@ -479,9 +577,13 @@ label help_fera:
 
     p "Yes. How do you...?"
 
+    show fera eyes_narrow neutral original
+
     f "Every hiring decision on this station must pass my desk for approval."
 
     "Oh, yeah. That little fine detail about her basically owning this entire space station."
+
+    show fera one_raised
 
     f "Surely you do not see me as the negligent sort who would stamp them without reading."
 
@@ -489,7 +591,11 @@ label help_fera:
 
     p "Although I guess I should be thanking you for the opportunity."
 
+    show fera eyes_wide raised part_neutral
+
     "An awkward silence descends before Fera laughs out loud."
+
+    show fera eyes_open relax part_smile
 
     f "Thank you? For the opportunity?! What a fine thing to say, under such circumstances!"
 
@@ -497,13 +603,19 @@ label help_fera:
 
     p "Something’s bothering me, though."
 
+    show fera concern neutral
+
     f "Hm? What would that be?"
 
     p "Why were you not evacuated immediately? I would think that would be a top priority."
 
+    show fera eyes_squint angry part_frown
+
     "For a moment, I sense a crackling wave of hostile intent coming from Fera’s direction. She did not like that question."
 
     "She leans in close, setting down the box she was searching for a quick moment."
+
+    show fera eyes_narrow sad frown
 
     f "Someone in my position is ever a target. Do you believe for a second that the sensors conveniently failed by accident, and I was trapped in a lockdown room via pure bad luck?"
 
@@ -513,13 +625,19 @@ label help_fera:
 
     "Well... Maybe to a quadrillionaire, it’s not so insane."
 
+    show fera look_away scared frown
+
     f "I only tell you this because I know you’re much too open-handed to be involved."
 
     f "But I firmly believe I was never intended to leave this space station alive."
 
+    show fera look_at scared part_frown
+
     f "I need your help. There is no Zentri without me. No Mycia Beta. Remember that."
 
     "Fera plops one more box in front of me, but nearly as soon as she does, she grabs it again."
+
+    show fera one_raised neutral
 
     "After a moment, she pulls out something bizarre and sets it on the table."
 
@@ -527,15 +645,21 @@ label help_fera:
 
     p "What’s that doing in there?"
 
+    show fera raised part_neutral
+
     f "I have no idea. But..."
 
     "It seems like Fera’s mind is running at warp speed."
+
+    show fera look_away concern neutral
 
     f "I’m.... going to hold onto this."
 
     "Oh, no. No. A weapon is the {i}last{/i} thing we need in this scenario."
 
     p "Fera. No. You don’t need that."
+
+    show fera look_at angry eyes_narrow frown
 
     f "Did you listen to anything I just told you? Yes, I do."
 
@@ -547,9 +671,13 @@ label help_fera:
 
     "Fera is not convinced."
 
+    show fera eyes_narrow one_raised neutral
+
     f "I believe it is I who decides what is acceptable and not acceptable here."
 
     "Fine. I have no choice then. I quickly reach forward and pull the charges out of the cutter, tossing them into a junk pile."
+
+    show fera eyes_wide angry part_frown
 
     f "H-How dare you?!"
 
@@ -557,13 +685,19 @@ label help_fera:
 
     "After a moment, she sighs."
 
+    show fera sad eyes_open frown
+
     f "You may be right. I guess it doesn’t matter now."
 
     p "Sorry I had to do that."
 
+    show fera original neutral
+
     f "Never apologize. It’s a sign of weakness."
 
     "Fera considers me quietly."
+
+    show fera original smile
 
     f "You’re not as cowardly as the others. Very few would dare even call me by my first name."
 
@@ -571,11 +705,19 @@ label help_fera:
 
     "Fera leans back in her chair, her voice purring and catlike."
 
+    show fera relax smirk
+
     f "I find that foolhardy courage refreshing."
 
     f "If we do somehow live through this mess, I’m certain I could have a number of... uses for you."
 
+    show fera raised frown
+
     f "But we’ve wasted enough time. The power cell is not here. We need to move on."
+
+    p "You're right."
+
+    hide fera with dissolve
 
     if chat_counter == 3:
         jump power_up
@@ -587,6 +729,8 @@ label help_fera:
 
 
 label power_up:
+
+    play music "<from 10>"+mus_build fadeout 3 fadein 4
 
     "No one’s having any luck, and the mood in the room has started to get desperate."
 
@@ -612,19 +756,43 @@ label power_up:
 
     "Everyone scrambles to Misha’s side of the room."
 
+    show fera eyes_wide raised smile at middle, flipped, parallaxed_f
+    show aran eyes_wide raised smile at mid_right, flipped, parallaxed_a
+    show misha eyes_wide concern at rightish, flipped, parallaxed_m
+    show zeni eyes_wide smile at leftish, parallaxed_z
+    with dissolve
+
     p "The fuel cell. We need to go, now."
 
     "There’s no time to celebrate. We have to install the core into a ship and board it immediately if we want to have any chance of survival."
 
+    show fera eyes_open look_away concern
+    show misha eyes_open relax frown
+    show zeni eyes_open concern part_frown
+    show aran eyes_open concern neutral
+
     "For a brief moment, no one knows what to do next. Perhaps inspired by the crisis, Aran speaks up."
+
+    show aran eyes_open raised smile
 
     a "What is the best plan of action from here?"
 
+    show zeni look_away one_raised frown
+
     z "We need to get to the auxiliary deck and install that core into a ship. But we also need to have someone deactivate the ship’s security from the next door command room."
+
+    show misha eyes_narrow look_away concern
 
     z "The ships all lock down after a failed attempt to prevent theft."
 
+    show fera eyes_open look_at concern frown
+    show zeni raised look_at
+
     z "Any volunteers?"
+
+    show aran sad look_away part_frown
+
+    show fera look_away
 
     "Everyone is silent. Even Misha and Fera aren’t volunteering."
 
@@ -634,21 +802,36 @@ label power_up:
 
     p "Alright, fine. Listen to me. Fera, you told me you know the way to the auxiliary docks?"
 
+    show fera look_at original neutral
+
     f "Correct."
 
     p "Take Zeni with you and get ready to power up the biggest ship you find in there."
 
+    show fera scared eyes_wide part_frown
+
     f "But how will we know where to put the core?"
+
+    show zeni one_raised eyes_wide
 
     p "That’s why you’re taking Zeni. Between the two of you... figure it out, I guess."
 
+    show fera sad frown
+
     p "I’m going with Misha and Aran to the command room to take care of the security."
 
+    show misha eyes_wide look_at raised
+
     p "Since I’m guessing no one else feels confident in their knowledge of fleet technology."
+
+    show aran eyes_open look_at concern neutral
 
     "The room is filled with shaking heads. Guess that’s that."
 
     a "Alright. You heard what [player_name] said. Let’s all live through this. Go!"
+
+    hide fera with easeoutleft
+    hide zeni with easeoutleft
 
     "Aran’s command is like a firecracker; everyone sprints in their respective directions."
 
@@ -661,12 +844,18 @@ label power_up:
     "Misha rolls her eyes at Aran’s saccharine words, but she doesn’t argue as we head out the door."
 
     #[change bg hallway with asteroids]
+    call setup_hallway(fade)
+
+    hide aran
+    hide misha
 
     "We make our way into the hallway, running down it as fast as our legs can carry us."
 
     "The ship shakes and groans from damage. Emergency lights are on in multiple places. This is life or death. I steel myself to run even faster."
 
     "We close in on the command room and dart through the door."
+
+    call setup_ctrl_room(fade)
 
     "Looking out onto the vastness of Mycia Beta, I feel a renewed will to survive."
 
@@ -676,25 +865,31 @@ label power_up:
 
     "I suppose it’s at least a small comfort to know that they can’t just decide to leave without us. The ships won’t activate without a biochipped pilot in the seat."
 
+    show misha eyes_wide relax at leftish, flipped, parallaxed_m with dissolve
+
     m "Over here! This is the console."
+
+    show aran eyes_wide raised smile at middle, flipped, parallaxed_a with dissolve
 
     "All three of us huddle around the console."
 
     "There are three workable ships: a 10-person transport ship, a 4-person escort ship, and a 2-seater reconnaissance ship."
 
     a "Perfect! The transport ship can take everyone!"
+
     "This is the best possible outcome. All I need to do is remove the security."
 
     "Then the locks on the ship will release, the deployment alert will sound, and Zeni and Fera will know which ship to power up."
 
-    "Alright. No time like the present."
+    "Alright. No time like the present. Once I've completed the sequence, I need to validate it with the security system."
+
+    "I'd better make sure I'm confident in my answer before I do that."
 
     #[downer puzzle that you can’t win]
 
-    hide zeni
     hide misha
-    hide fera
     hide aran
+    with dissolve
     window hide
     with dissolve
 
@@ -703,9 +898,9 @@ label power_up:
 
     $timedout = renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)
     if timedout != "timeout":
-        "...Nothing happens."
+        "...This is impossible."
 
-    play music mus_puzzle fadeout 3 fadein 3
+    play music "<from 30>"+mus_puzzle fadeout 3 fadein 4
 
     show misha frown at right, parallaxed_m
     show aran frown sad at cright, parallaxed_a
@@ -722,6 +917,8 @@ label power_up:
     p "Shut up, both of you!"
 
     "I need to think. I have to focus on what I remember about this..."
+
+    "Trial and error is not an option. I only get one shot..."
 
 
     #Puzzle for 4 person ship
