@@ -178,7 +178,7 @@ label story:
 
     c "{i}Don’t you go and die! You hear me? You can’t die!{/i}"
 
-    #[play asteroid crash sound]
+    play sound "Asteroid_Impact_Louder.ogg"
 
     "An earsplitting crash sounds through Corsi’s relay."
 
