@@ -646,7 +646,7 @@ label power_up:
     #Puzzle for 4 person ship
     if activation_success == True:
         $one_death = True
-        jump one_left
+        jump vessel_activated
 
     else:
         pass
@@ -672,7 +672,7 @@ label power_up:
         "This is my last chance."
 
         if activation_success == True:
-            jump three_left
+            jump vessel_activated
 
         else:
 
