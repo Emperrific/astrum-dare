@@ -65,7 +65,7 @@ define gui.name_text_outlines = [(1, "#0002", 0,0)]
 define gui.interface_text_font = "Actor-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 24
 
 ## The size of character names.
 define gui.name_text_size = 35
@@ -130,7 +130,7 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 250
-define gui.dialogue_ypos = 50
+define gui.dialogue_ypos = 55
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 744

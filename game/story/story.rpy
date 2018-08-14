@@ -49,7 +49,7 @@ label story:
 
     stop music
     python:
-        player_name = renpy.input("Please input your name")
+        player_name = renpy.input("Please enter your name.")
         player_name = player_name.strip()
 
 
@@ -143,7 +143,7 @@ label story:
 
     ai"Estimated time before asteroid storm reaches critical proximity: 49 minutes."
 
-    hide alarm with dissolve(1.5)
+    hide alarm with dissolve
 
     stop sound
 
@@ -199,7 +199,7 @@ label story:
 
     ai"Estimated time before asteroid storm reaches critical proximity: 44 minutes."
 
-    hide alarm with dissolve(1.5)
+    hide alarm with dissolve
 
     stop sound
 
@@ -680,7 +680,7 @@ label argument:
 
     "As it stands, there is one person for each corner of the room. I find myself milling around, not sure where to go."
 
-    hide alarm with dissolve(1.5)
+    hide alarm with dissolve
 
     stop sound
 
