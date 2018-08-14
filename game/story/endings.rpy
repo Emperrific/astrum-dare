@@ -715,7 +715,7 @@ label ultra_fail:
     show aran look_away frown eyes_narrow
     hide alarm with Dissolve(1.5)
 
-    "Looking out across the silhouette of Mycia Beta, I counts the astroids drifting by as the air slowly becomes thinner and thinner."
+    "Looking out across the silhouette of Mycia Beta, I count the asteroids drifting by as the air slowly becomes thinner and thinner."
 
     stop sound
 
@@ -726,7 +726,7 @@ label ultra_fail:
 
 label end_credits:
 
-    
+
     show black with Dissolve(2)
     pause 1
     show screen credits
