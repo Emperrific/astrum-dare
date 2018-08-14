@@ -27,6 +27,7 @@ screen astra_credits:
         text "Renee Archbold (Archaren):" size 40
         text "Writing" xoffset 20
         text "Direction" xoffset 20
+        text "Music Sourcing" xoffset 20
 
 screen patchwork_credits:
 
@@ -39,6 +40,7 @@ screen patchwork_credits:
         text "Vanessa Parker (Azura):" size 40
         text "Writing" xoffset 20
         text "GUI Design and Art" xoffset 20
+        text "BG Art Sourcing and Prep" xoffset 20
 
 image credits emp = im.MatrixColor("emp_icons.png", im.matrix.desaturate())
 
@@ -53,6 +55,8 @@ screen emp_credits:
         text "Elaine M. Podosek (Empish):" size 40
         text "Puzzle Programming" xoffset 20
         text "Effects Programming" xoffset 20
+        text "GUI Programming" xoffset 20
+        text "There was a lot of programming okay?" xoffset 20
     
 screen credits_bye:
     text "Thanks for playing!" at truecenter:
