@@ -36,18 +36,12 @@ image overlay:
 
 image alarm:
     "red_alarm_overlay.png"
-    alpha 0.4
-    choice:
-        1.0
-    choice:
-        1.4
-    choice:
-        1.8
-    choice:
-        2.2
+    alpha 0.0
+    linear 0.06 alpha 0.4
     linear 1.5 alpha 0.6
-    linear 1.5 alpha 0.4
-    repeat
+    linear 0.9 alpha 0.2
+    linear 1.5 alpha 0.6
+    linear 0.06 alpha 0.0
 
 image asteroid:
     "asteroid.png"
