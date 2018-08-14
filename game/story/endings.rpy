@@ -57,7 +57,7 @@ label vessel_activated:
 
     "Misha and Aran know the score, but Zeni and Fera don’t. I don’t have time to phrase it gently..."
 
-    play music mus_tense fadeout 3 fadein 3
+    play music mus_tense fadeout 4 fadein 6
 
     p "Before we go, I..."
 
@@ -423,6 +423,8 @@ label fera_lives:
     f "No promises."
 
     "She shakes him off and walks away onto the ship."
+
+    hide fera with easeoutleft
 
     "Misha scowls darkly at me and taps her foot furiously."
 
