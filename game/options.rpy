@@ -194,6 +194,32 @@ init python:
 
     ## To archive files, classify them as 'archive'.
 
+    build.classify("**.txt", None)
+
+# Add png and jpg files in the game directory into an archive.
+    build.archive("scripts", "all")
+    build.archive("images", "all")
+    build.archive("sounds", "all")
+
+# Put script files into the scripts archive.
+    build.classify("game/**.rpy", "scripts")
+    build.classify("game/**.rpyc", "scripts")
+
+# Put images into the images archive.
+    build.classify("game/**.jpg", "images")
+    build.classify("game/**.png", "images")
+    build.classify("game/**.webm", "images")
+    build.classify("game/**.mp4", "images")
+
+    # build.classify('game/**.png', 'archive')
+    # build.classify('game/**.jpg', 'archive')
+
+    build.classify("game/**.mp3", "sounds")
+    build.classify("game/**.ogg", "sounds")
+
+
+    ## To archive files, classify them as 'archive'.
+
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
 

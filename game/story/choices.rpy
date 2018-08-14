@@ -535,7 +535,7 @@ label power_up:
 
     "All this stuff will be reduced to debris soon, anyway. At this point we’re all throwing things and ripping open boxes."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -632,8 +632,24 @@ label power_up:
 
     #[downer puzzle that you can’t win]
 
+    hide zeni
+    hide misha
+    hide fera
+    hide aran
+    window hide
+    with dissolve
+
+    $ num_active = 0
+    $turn_on(seeds3[0])
+
+    $timedout = renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)
+    if timedout != "timeout":
+        "...Nothing happens."
+
     play music mus_puzzle fadeout 3 fadein 3
 
+    show misha frown at right, parallaxed_m
+    show aran frown sad at cright, parallaxed_a
     m "There’s no way we can get through this in time."
 
     "She’s right. Damn it! I pound my fist against the side of the console."

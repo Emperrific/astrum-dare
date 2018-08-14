@@ -18,7 +18,7 @@ label vessel_activated:
 
     p "Okay, we have to go to the ship, right away."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -31,7 +31,7 @@ label vessel_activated:
 
     ai "Oxygen levels at: 98\%. Time until depletion: 6 minutes."
 
-    hide alarm with dissolve
+    hide alarm with dissolve(1.5)
 
     stop sound
 
@@ -668,7 +668,7 @@ label ultra_fail:
 
     "Each of us is trying to make peace in their own way, all hope lost."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -676,7 +676,7 @@ label ultra_fail:
 
     ai "Oxygen levels at: 22\%. All personnel, please use auxiliary oxygen sources..."
 
-    hide alarm with dissolve
+    hide alarm with dissolve(1.5)
 
     stop sound
 

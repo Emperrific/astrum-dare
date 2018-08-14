@@ -65,7 +65,7 @@ define gui.name_text_outlines = [(1, "#0002", 0,0)]
 define gui.interface_text_font = "Actor-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 24
 
 ## The size of character names.
 define gui.name_text_size = 35
@@ -89,6 +89,21 @@ define gui.title_text_size = 50
 define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
+## Menu Sounds #################################################################
+
+#COMMENTING THIS OUT BECAUSE NO TIME TO IMPLEMENT FULLY - Azura
+# Sound when a button is hovered.
+#define guisfx_button_hover = "sfx/silence_sec.ogg"
+
+# Sound when a button is clicked.
+#define guisfx_button_click = "sfx/click.ogg"
+
+# Sound when a warning pops up, like when deleting a file, etc.
+#define guisfx_button_warn = "sfx/warn.ogg"
+
+# Sound when you save or load a game.
+#define guisfx_button_saveload = "sfx/save.ogg"
+#define guisfx_button_save = "sfx/save.ogg"
 
 ## Dialogue ####################################################################
 ##
@@ -130,7 +145,7 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 250
-define gui.dialogue_ypos = 50
+define gui.dialogue_ypos = 55
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 744

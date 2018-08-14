@@ -13,11 +13,11 @@ define mus_escape = "music/07_like_an_angel_instrumental.mp3"
 
 define p = Character("[player_name]")
 python:
-    player_name = renpy.input("Please input your name")
+    player_name = renpy.input("Please enter your name.")
     player_name = player_name.strip()
 
 define c = Character("Corsi")
-define ai = Character("ZENTRI AI")
+define ai = Character("Zentri AI")
 define m = Character("[misha_name]", color ="#f7e", image="misha")
 define z = Character("[zeni_name]", color="#78f", image="zeni")
 define f = Character("[fera_name]", color="#f7b", image="fera")
@@ -49,7 +49,7 @@ label story:
 
     stop music
     python:
-        player_name = renpy.input("Please input your name")
+        player_name = renpy.input("Please enter your name.")
         player_name = player_name.strip()
 
 
@@ -66,7 +66,7 @@ label story:
 
     #[fade in tense music]
     $ renpy.music.set_volume(.3)
-    play music mus_build fadein 2
+    play music mus_tense fadein 2
     p"I’m on my way. I’m on Sublevel B, Section, um..."
 
     "I pause and look around, hoping to regain my bearings. I’ve been running for so long that every breath hurts, and it’s hard to read the walls."
@@ -133,7 +133,7 @@ label story:
 
     "He doesn’t wait for me to reply before closing the comm relay."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -183,13 +183,13 @@ label story:
 
     "After that, the feed drops... along with the pit of my stomach."
 
-    play music mus_sad fadeout 6 fadein 10
+    stop music fadeout 6
 
     p"Corsi? Corsi?!"
 
     "He’s unreachable. What the...?"
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -238,8 +238,8 @@ label story:
 
     "But where should I start?"
 
-
     menu:
+        with dissolve
         "Life Support Center":
                 p"Might as well go with the closest."
 
@@ -670,7 +670,7 @@ label argument:
 
     "Just as we begin, a familiar yet unwelcome sound graces our ears."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
