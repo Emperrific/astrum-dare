@@ -674,8 +674,6 @@ label power_up:
 
         m "What happened?! What did you just do?!"
 
-        show zeni scared at center, parallaxed
-        show fera scared at cright, parallaxed
         show aran scared at right, parallaxed
 
         with moveinright
@@ -697,7 +695,7 @@ label power_up:
         hide fera
         hide aran
         with dissolve
-        
+
         $num_active = 0
         $turn_on(seeds1[0])
 
