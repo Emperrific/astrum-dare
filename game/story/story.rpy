@@ -13,11 +13,11 @@ define mus_escape = "music/07_like_an_angel_instrumental.mp3"
 
 define p = Character("[player_name]")
 python:
-    player_name = renpy.input("Please input your name")
+    player_name = renpy.input("Please enter your name.")
     player_name = player_name.strip()
 
 define c = Character("Corsi")
-define ai = Character("ZENTRI AI")
+define ai = Character("Zentri AI")
 define m = Character("[misha_name]", color ="#f7e", image="misha")
 define z = Character("[zeni_name]", color="#78f", image="zeni")
 define f = Character("[fera_name]", color="#f7b", image="fera")
@@ -143,7 +143,7 @@ label story:
 
     ai"Estimated time before asteroid storm reaches critical proximity: 49 minutes."
 
-    hide alarm with dissolve
+    hide alarm with dissolve(1.5)
 
     stop sound
 
@@ -199,7 +199,7 @@ label story:
 
     ai"Estimated time before asteroid storm reaches critical proximity: 44 minutes."
 
-    hide alarm with dissolve
+    hide alarm with dissolve(1.5)
 
     stop sound
 
@@ -680,7 +680,7 @@ label argument:
 
     "As it stands, there is one person for each corner of the room. I find myself milling around, not sure where to go."
 
-    hide alarm with dissolve
+    hide alarm with dissolve(1.5)
 
     stop sound
 
