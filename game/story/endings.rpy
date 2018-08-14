@@ -2,8 +2,8 @@
 label vessel_activated:
 
     "The security screen clicks, changing to show the words Vessel Activated."
-    show aran eyes_closed raised open_smile
-    show misha eyes_closed raised open_smile
+    show aran eyes_open look_at raised part_smile
+    show misha eyes_open look_at raised part_smile
     a "Yes! You did it! Amazing!"
 
     "Aran and Misha are practically cheering."
@@ -24,15 +24,15 @@ label vessel_activated:
 
     ai "Warning: Life support systems are offline."
 
-    ai "Oxygen levels at: 98%. Time until depletion: 6 minutes."
+    ai "Oxygen levels at: 98\%. Time until depletion: 6 minutes."
 
     "The life support?! Oh, no. We {i}really{/i} have to go now."
     show misha eyes_rest frown
     m "At least suffocating might be a better death than being crushed by debris."
-    show misha eyes_narrow
+    show misha eyes_narrow look_at
     show aran look_at eyes_open scared frown
     "Misha makes a quiet and cold point as I open the gate between the control room and launch dock."
-    show zeni open_smile eyes_open raised
+    show zeni  part_smile eyes_open raised at leftish_zeni, parallaxed with easeinleft
     show fera neutral raised
     "As soon as the doors open, I see Zeni jump down from the back panel of the ship. He flashes me a double thumbs up."
 
@@ -77,7 +77,7 @@ label one_left:
 
     label zeni_lost:
 
-        show zeni scared open_frown eyes_wide
+        show zeni scared part_frown eyes_wide
         z "What...? No. No! What do you mean, stay behind?!"
 
         z "I’ll die!"
@@ -434,8 +434,11 @@ label fera_lives:
     jump final_escape
 
 label final_escape:
+    hide screen freak_parent
 
-    play music mus_escape fadein 5
+    call setup_escape(fade)
+
+    play music mus_escape fadeout 5 fadein 5
 
     if one_death == False:
         "I board the ship without another word. Three faces watch on as the ship closes. Three faces I’ll never forget."
@@ -454,6 +457,8 @@ label final_escape:
             f "I was right about you. You chose wisely."
 
     "I strap myself into the pilot’s chair and prepare to take off."
+
+    play sound "Asteroid_Impact_Louder.ogg"
 
     "No sooner do we launch the ship than another asteroid strikes close by."
 

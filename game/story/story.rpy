@@ -54,7 +54,7 @@ label story:
 
 
     if not player_name:
-         $player_name = "Kestri"
+         $player_name = "Serin"
     #[play crackle sound]
 
     call setup_sublevel(dissolve)
@@ -481,7 +481,7 @@ label argument:
 
     a"Thank you so much for opening that door. We were in quite some trouble."
 
-    show aran part_smile 
+    show aran part_smile
     a"Ah, my manners! My name is Aran. Aran Ceani, governor-elect of the Saru Territories."
     $aran_name = "Aran"
 

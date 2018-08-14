@@ -16,7 +16,11 @@ label setup_hallway(trans):
     return
 
 label setup_sublevel(trans):
-    call setup_environment("bg sublevel", "bg sublevel", "asteroids", "overlays", trans)
+    call setup_environment("bg sublevel", "bg sublevel", "asteroids", "overlay", trans)
+    return
+
+label setup_escape(trans):
+    call setup_environment("bg_escape", "bg_escape", "asteroids,", "overlay", trans)
     return
 
 label setup_ctrl_room(trans):

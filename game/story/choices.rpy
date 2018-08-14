@@ -646,17 +646,18 @@ label power_up:
 
 
     #Puzzle for 4 person ship
-    hide zeni
-    hide misha
-    hide fera
-    hide aran
-    window hide
-    with dissolve
-
-    $num_active = 0
-    $turn_on(seeds2[0])
-
-    $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
+    # hide zeni
+    # hide misha
+    # hide fera
+    # hide aran
+    # window hide
+    # with dissolve
+    #
+    # $num_active = 0
+    # $turn_on(seeds2[0])
+    #
+    # $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
+    $activation_success = True
 
     if activation_success == True:
         $one_death = True
@@ -697,7 +698,7 @@ label power_up:
         hide fera
         hide aran
         with dissolve
-        
+
         $num_active = 0
         $turn_on(seeds1[0])
 
