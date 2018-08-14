@@ -66,7 +66,7 @@ label story:
 
     #[fade in tense music]
     $ renpy.music.set_volume(.3)
-    play music mus_build fadein 2
+    play music mus_tense fadein 2
     p"I’m on my way. I’m on Sublevel B, Section, um..."
 
     "I pause and look around, hoping to regain my bearings. I’ve been running for so long that every breath hurts, and it’s hard to read the walls."
@@ -183,7 +183,7 @@ label story:
 
     "After that, the feed drops... along with the pit of my stomach."
 
-    play music mus_sad fadeout 6 fadein 10
+    stop music fadeout 6
 
     p"Corsi? Corsi?!"
 
@@ -238,8 +238,8 @@ label story:
 
     "But where should I start?"
 
-
     menu:
+        with dissolve
         "Life Support Center":
                 p"Might as well go with the closest."
 
