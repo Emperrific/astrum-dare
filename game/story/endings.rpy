@@ -1,5 +1,5 @@
 
-label one_left:
+label vessel_activated:
 
     "The security screen clicks, changing to show the words Vessel Activated."
     show aran eyes_closed raised open_smile
@@ -38,6 +38,9 @@ label one_left:
 
     z "It’s in! We need to board, right now!"
 
+    if one_death == False:
+        f "Isn’t this ship a little small...?"
+
     p "Wait."
     show fera angry eyes_narrow frown
     show zeni one_raised neutral
@@ -55,6 +58,13 @@ label one_left:
 
     p "No. Because..."
 
+    if one_death == True:
+        jump one_left
+    else:
+        jump three_left
+
+
+label one_left:
     menu:
         "...Zeni has to stay behind.":
             jump zeni_lost
@@ -244,13 +254,204 @@ label one_left:
 
 label three_left:
 
+    menu:
+        "...Only Zeni can come with me.":
+            jump zeni_lives
+        "...Only Misha can come with me.":
+            jump misha_lives
+        "...Only Aran can come with me.":
+            jump aran_lives
+        "...Only Fera can come with me.":
+            jump fera_lives
 
+label zeni_lives:
+
+    $survivor = "Zeni"
+
+    f "What do you mean, only Zeni?!"
+
+    "Everyone is confused and dismayed. Even Zeni looks surprised beneath his relief."
+
+    a "The ship is... too small..."
+
+    m "But why would you pick Zeni?!"
+
+    f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take that nobody?"
+
+    z "Okay, that’s enough."
+
+    "Misha laughs mockingly at Fera."
+
+    m "Maybe this is your karma for being such an evil bitch."
+
+    "Aran is the only one who remains quiet. He drops to his knee in prayer, then addresses me softly."
+
+    a "If this is the only way, then so be it..."
+
+    "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
+
+    "How can I possibly explain to three people why I’m leaving them to die?"
+
+    "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
+
+    p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
+
+    "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
+
+    p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
+
+    "Zeni softly taps my shoulder as the three others begin to accept their fate with a combination of reflection, weeping, and fury."
+
+    z "We should go."
+
+    jump final_escape
+
+
+label misha_lives:
+
+    $survivor = "Misha"
+
+    f "What do you mean, only Misha?!"
+
+    "Everyone is confused and dismayed. Misha smiles arrogantly, but her shoulders slump in relief."
+
+    a "The ship is... too small..."
+
+    z "But my little girl... No! Please no!"
+
+    f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take *her*?"
+
+    "Misha laughs mockingly at Fera, crossing her arms triumphantly."
+
+    m "Maybe this is your karma for being such an evil bitch."
+
+    "Aran is the only one who remains quiet. He drops to his knee in prayer, then addresses me softly."
+
+    a "If this is the only way, then so be it..."
+
+    "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
+
+    "How can I possibly explain to three people why I’m leaving them to die?"
+
+    "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
+
+    p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
+
+    "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
+
+    p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
+
+    "Misha walks briskly towards the ship as the three others begin to accept their fate with a combination of reflection, weeping, and fury."
+
+    m "We haven’t time to waste."
+
+    jump final_escape
+
+label aran_lives:
+
+    $survivor = "Aran"
+
+    f "What do you mean, only Aran?!"
+
+    "Everyone is confused and dismayed. Aran looks extremely shocked at the sound of his name. Perhaps he was already resigned to death..."
+
+    a "Are you sure about this?"
+
+    z "But my little girl... No! Please no!"
+
+    f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take that worthless figurehead?"
+
+    "Misha laughs mockingly at Fera."
+
+    m "Maybe this is your karma for being such an evil bitch."
+
+    "Aran is the only one who remains quiet. He drops to his knee in prayer, then addresses me softly."
+
+    a "If this is what you want, then I am in no position to say no."
+
+    "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
+
+    "How can I possibly explain to three people why I’m leaving them to die?"
+
+    "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
+
+    p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
+
+    "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
+
+    p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
+
+    "Aran bows apologetically as the three others begin to accept their fate with a combination of reflection, weeping, and fury."
+
+    a "We must go."
+
+    jump final_escape
+
+label fera_lives:
+
+    $survivor = "Fera"
+
+    f "Hah! At least someone here has a bit of sense."
+
+    "Aran’s face darkens, and he turns away. It appears he is very unhappy with my decision."
+
+    "Everyone is confused and dismayed. Fera immediately begins walking towards the ship, but Zeni grabs her arm."
+
+    z "Fera!"
+
+    f "What now? Let go of me!"
+
+    "Zeni holds onto her arm tightly, his voice pleading."
+
+    z "Please. I have a daughter. Racia Taro. She’s only a child."
+
+    f "What...?"
+
+    z "I’m begging you. For someone like you, it would be nothing. Help her."
+
+    "Fera stands still for a moment, looking surprisingly thoughtful."
+
+    f "No promises."
+
+    "She shakes him off and walks away onto the ship."
+
+    "Misha scowls darkly at me and taps her foot furiously."
+
+    m "So you’ve shown your true colors. I can’t believe you let her get her claws in you."
+
+    "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
+
+    "How can I possibly explain to three people why I’m leaving them to die?"
+
+    "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
+
+    p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
+
+    "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
+
+    p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
+
+    jump final_escape
 
 label final_escape:
 
     play music mus_escape fadein 5
 
+    if one_death == False:
+        "I board the ship without another word. Three faces watch on as the ship closes. Three faces I’ll never forget."
+
     "There was no other way..."
+
+    if one_death == False:
+        "There was no other way, right? I did the best that I could..."
+        if survivor == "Zeni":
+            z "Thank you."
+        elif survivor == "Misha":
+            m "I suppose I should be thanking you."
+        elif survivor == "Aran":
+            a "You have my thanks. I won’t make you regret this decision."
+        else:
+            f "I was right about you. You chose wisely."
 
     "I strap myself into the pilot’s chair and prepare to take off."
 
@@ -290,8 +491,13 @@ label ultra_fail:
 
     ai "Warning: Life support systems are offline."
 
-    ai "Oxygen levels at: 22%. All personnel, please use auxiliary oxygen sources..."
+    ai "Oxygen levels at: 22\%. All personnel, please use auxiliary oxygen sources..."
 
     "I’m sorry, Corsi... but it appears I’ll be joining you after all."
 
     jump end_credits
+
+
+label end_credits:
+
+    "Game over, suckaaa"

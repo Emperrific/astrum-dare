@@ -137,22 +137,33 @@ init python:
         print ("valid")
         return True
 
+
+transform delayed_fall_in(t=0):
+    rotate_pad False
+    rotate -4
+    alpha 0.0
+    zoom 1.3
+    offset (-200, -100)
+    pause t
+    easein 1 alpha 1 zoom 1 rotate 0 offset (0,0)
+
 default num_active = 0
 define len_unit = 50
 default current_drag = None
 
 
 screen pipeline_puzzle(processors=[], tasks=[]):
-
     #add "#fff"
 
     frame:
+        at delayed_fall_in
         xalign 0.9
         yalign 0.9
         textbutton "Launch":
             action Return(Function(valid_puzzle,processors, tasks))
 
     vbox:
+        at delayed_fall_in
         xalign 0.9
         yalign 0.1
         xmaximum 500
@@ -166,6 +177,7 @@ screen pipeline_puzzle(processors=[], tasks=[]):
 
         null height 20
         frame:
+            xalign 1.0
             vbox:
                 text "Prerequisites: "
                 for task in tasks:
@@ -175,11 +187,12 @@ screen pipeline_puzzle(processors=[], tasks=[]):
 
 
     draggroup:
+        at delayed_fall_in
         for i in range(len(tasks)):
             $task = tasks[i]
             drag:
-                xpos 100
-                ypos 100 + i *30
+                xpos 50 + (i%2)*350
+                ypos 50 + (i/2) *30
                 drag_name task.name
                 droppable False
                 dragged task.set_dragged
@@ -197,8 +210,8 @@ screen pipeline_puzzle(processors=[], tasks=[]):
             $processor_length = num_units * len_unit
             $red_length = processor.length - processor_length
             drag:
-                xpos 100
-                ypos 500 + i * 50
+                xpos 50
+                ypos 500 -(len(processors)/2*50) + i * 50
                 drag_name processor.name
                 draggable False
                 dropped processor.process_drop

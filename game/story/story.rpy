@@ -5,6 +5,10 @@
 define mus_start = "music/01_weirder_things_instrumental.mp3"
 define mus_build = "music/02_illuminate_instrumental.mp3"
 define mus_sad = "<to 100>music/06_the_attic_instrumental.mp3"
+define mus_relax = "music/03_blue_hue_instrumental.mp3"
+define mus_puzzle = "music/04_runner_instrumental.mp3"
+define mus_tense = "music/05_the_seeds_of_unrest_instrumental.mp3"
+define mus_escape = "music/07_like_an_angel_instrumental.mp3"
 
 
 define p = Character("[player_name]")
@@ -31,6 +35,10 @@ default talk_zeni = False
 default talk_misha = False
 default talk_aran = False
 default talk_fera = False
+
+default one_death = False
+default activation_success = False
+default survivor = None
 
 
 # The game starts here.

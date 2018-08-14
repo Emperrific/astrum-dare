@@ -643,10 +643,24 @@ label power_up:
     p "Shut up, both of you!"
 
     "I need to think. I have to focus on what I remember about this..."
+
+
     #Puzzle for 4 person ship
+    hide zeni
+    hide misha
+    hide fera
+    hide aran
+    window hide
+    with dissolve
+
+    $num_active = 0
+    $turn_on(seeds2[0])
+
+    $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
+
     if activation_success == True:
         $one_death = True
-        jump one_left
+        jump vessel_activated
 
     else:
         pass
@@ -656,8 +670,15 @@ label power_up:
     #If success 🡆 1 PERSON LEFT BEHIND ENDINGS
 
     #If fail
+        show misha angry open_neutral eyes_wide at left, parallaxed with moveinleft
 
         m "What happened?! What did you just do?!"
+
+        show zeni scared at center, parallaxed
+        show fera scared at cright, parallaxed
+        show aran scared at right, parallaxed
+
+        with moveinright
 
         "No. No, no, no, no."
 
@@ -671,8 +692,19 @@ label power_up:
 
         "This is my last chance."
 
+        hide zeni
+        hide misha
+        hide fera
+        hide aran
+        with dissolve
+        
+        $num_active = 0
+        $turn_on(seeds1[0])
+
+        $activation_success = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+
         if activation_success == True:
-            jump three_left
+            jump vessel_activated
 
         else:
 

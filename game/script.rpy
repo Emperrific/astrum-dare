@@ -3,18 +3,63 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+define cright = Transform(xalign=0.75, yalign=1.0)
 
-default seeds1 = [
-    Processor("1", 6, [6,5,4]),
-    Processor("2", 6, [6,5,4]),
-    Processor("3", 6, [6,5,4])
+default lens2 = [16,15,14,13,12,11,10]
+default seeds2 = [
+    Processor("1", lens2[0], lens2),
+    Processor("2", lens2[0], lens2),
+    Processor("3", lens2[0], lens2),
+    Processor("4", lens2[0], lens2),
+    Processor("5", lens2[0], lens2),
+    Processor("6", lens2[0], lens2),
+    Processor("7", lens2[0], lens2)
     ]
 
-default task1 = Task("A", 2, "#abc")
-default tasks1 = [
-    task1,
-    Task("B", 3, "#fed", [task1]),
-    Task("C", 4, "#f12")
+default task2B = Task("B", 6, "#0f0")
+default task2E = Task("E", 4, "#f07")
+default task2F = Task("F", 6, "#7f0")
+default task2H = Task("H", 6, "#f70")
+default task2J = Task("J", 3, "#999")
+default task2K = Task("K", 1, "#fff")
+default task2L = Task("L", 5, "#ff0")
+default task2M = Task("M", 4, "#0ff", [task2K, task2J])
+default task2N = Task("N", 3, "#f0f", [task2H])
+
+default tasks2 = [
+    Task("A", 6, "#00f", [task2L]),
+    task2B,
+    Task("C", 4, "#f00", [task2B]),
+    Task("D", 6, "#07f", [task2E]),
+    task2E,
+    task2F,
+    Task("G", 1, "#70f", [task2N]),
+    task2H,
+    Task("I", 2, "#0f7", [task2F, task2M]),
+    task2J,
+    task2K,
+    task2L,
+    task2M,
+    task2N,
+    ]
+
+define lens1 = [9,8,7,6]
+define seeds1 = [
+    Processor("1", lens1[0], lens1),
+    Processor("2", lens1[0], lens1),
+    Processor("3", lens1[0], lens1),
+    Processor("4", lens1[0], lens1),
+    ]
+
+define task1A = Task("A", 2, "#00f")
+define task1E = Task("E", 3, "#f0f")
+define tasks1 = [
+    task1A,
+    Task("B", 2, "#0f0", [task1E]),
+    Task("C", 3, "#f00", [task1A]),
+    Task("D", 6, "#0ff"),
+    task1E,
+    Task("F", 4, "#ff0", [task1A]),
     ]
 
 image bg control room = "control_room_overlay.png"
@@ -33,7 +78,7 @@ default cool = False
 label start:
     # call setup_sublevel(dissolve)
     # $num_active = 0
-    # $turn_on(seeds1[0])
+    # $turn_on(seeds2[0])
     #
     # $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
     #
