@@ -133,7 +133,7 @@ label story:
 
     "He doesn’t wait for me to reply before closing the comm relay."
 
-    #[play alarm sound]
+    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
 
     show alarm
 
@@ -142,6 +142,10 @@ label story:
     ai"Immediate evacuation of all personnel is required."
 
     ai"Estimated time before asteroid storm reaches critical proximity: 49 minutes."
+
+    hide alarm with dissolve
+
+    stop sound
 
     "That’s comforting. Good to know that my last moments might be spent listening to the Zentri's system AI counting down the minutes until we all die."
 
@@ -185,15 +189,19 @@ label story:
 
     "He’s unreachable. What the...?"
 
+    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
 
-
-    #[display red light fade]
+    show alarm
 
     ai"Warning: Catastrophic damage to hangar bay detected."
 
     ai"Evacuation of all personnel is no longer possible."
 
     ai"Estimated time before asteroid storm reaches critical proximity: 44 minutes."
+
+    hide alarm with dissolve
+
+    stop sound
 
     p"No. No way."
 
@@ -662,9 +670,8 @@ label argument:
 
     "Just as we begin, a familiar yet unwelcome sound graces our ears."
 
-    #[play alarm sound]
+    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
 
-    #[display red light fade]
     show alarm
 
     ai"Warning: Catastrophic damage to multiple sectors detected."
@@ -673,7 +680,9 @@ label argument:
 
     "As it stands, there is one person for each corner of the room. I find myself milling around, not sure where to go."
 
-    hide alarm
+    hide alarm with dissolve
+
+    stop sound
 
     "I should just go help someone with their share. But who?"
 
