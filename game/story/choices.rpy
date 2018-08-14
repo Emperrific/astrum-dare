@@ -543,7 +543,7 @@ label power_up:
 
     ai "Estimated time before asteroid storm reaches critical proximity: 23 minutes."
 
-    hide alarm with dissolve(1.5)
+    hide alarm with dissolve
 
     stop sound
 

@@ -89,6 +89,21 @@ define gui.title_text_size = 50
 define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
+## Menu Sounds #################################################################
+
+#COMMENTING THIS OUT BECAUSE NO TIME TO IMPLEMENT FULLY - Azura
+# Sound when a button is hovered.
+#define guisfx_button_hover = "sfx/silence_sec.ogg"
+
+# Sound when a button is clicked.
+#define guisfx_button_click = "sfx/click.ogg"
+
+# Sound when a warning pops up, like when deleting a file, etc.
+#define guisfx_button_warn = "sfx/warn.ogg"
+
+# Sound when you save or load a game.
+#define guisfx_button_saveload = "sfx/save.ogg"
+#define guisfx_button_save = "sfx/save.ogg"
 
 ## Dialogue ####################################################################
 ##
