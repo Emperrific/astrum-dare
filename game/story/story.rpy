@@ -133,7 +133,7 @@ label story:
 
     "He doesn’t wait for me to reply before closing the comm relay."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
