@@ -4,6 +4,7 @@
 # name of the character.
 
 define cright = Transform(xalign=0.75, yalign=1.0)
+define cleft = Transform(xalign=0.25, yalign=1.0)
 
 default lens3 = [16,15,14,13,13,11,10]
 default seeds3 = [
