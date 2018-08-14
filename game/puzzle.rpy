@@ -156,7 +156,7 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
     #add "#fff"
 
     if time > 0:
-        timer time action Return(Function(valid_puzzle, processors, tasks))
+        timer time action Return("timeout")
 
     frame:
         at delayed_fall_in

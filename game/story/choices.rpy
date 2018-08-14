@@ -642,7 +642,9 @@ label power_up:
     $ num_active = 0
     $turn_on(seeds3[0])
 
-    $renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)()
+    $timedout = renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)
+    if timedout != "timeout":
+        "...Nothing happens."
 
     play music mus_puzzle fadeout 3 fadein 3
 
