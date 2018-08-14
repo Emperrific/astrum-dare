@@ -661,7 +661,7 @@ label power_up:
     # $turn_on(seeds2[0])
     #
     # $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
-    $activation_success = True
+
 
     if activation_success == True:
         $one_death = True
@@ -695,16 +695,18 @@ label power_up:
 
         "This is my last chance."
 
-        hide zeni
-        hide misha
-        hide fera
-        hide aran
-        with dissolve
+        # hide zeni
+        # hide misha
+        # hide fera
+        # hide aran
+        # with dissolve
+        #
+        # $num_active = 0
+        # $turn_on(seeds1[0])
+        #
+        # $activation_success = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
 
-        $num_active = 0
-        $turn_on(seeds1[0])
-
-        $activation_success = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+        $activation_success = True
 
         if activation_success == True:
             jump vessel_activated

@@ -7,7 +7,7 @@ define mus_build = "music/02_illuminate_instrumental.mp3"
 define mus_sad = "<to 100>music/06_the_attic_instrumental.mp3"
 define mus_relax = "music/03_blue_hue_instrumental.mp3"
 define mus_puzzle = "music/04_runner_instrumental.mp3"
-define mus_tense = "music/05_the_seeds_of_unrest_instrumental.mp3"
+define mus_tense = "<from 30>music/05_the_seeds_of_unrest_instrumental.mp3"
 define mus_escape = "music/07_like_an_angel_instrumental.mp3"
 
 
