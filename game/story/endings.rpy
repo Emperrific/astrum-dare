@@ -42,7 +42,7 @@ label vessel_activated:
     show aran look_at eyes_open scared frown
     "Misha makes a quiet and cold point as I open the gate between the control room and launch dock."
     show fera neutral raised at center, parallaxed_f with easeinleft
-    show zeni  part_smile eyes_open raised at leftish_zeni, parallaxed_z with easeinleft
+    show zeni part_smile eyes_open raised at leftish_zeni, parallaxed_z with easeinleft
 
     "As soon as the doors open, I see Zeni jump down from the back panel of the ship. He flashes me a double thumbs up."
 

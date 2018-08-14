@@ -38,7 +38,11 @@ label help_zeni:
 
     p "But I thought you were the Vice President of Security?"
 
+    show zeni frown one_raised
+
     z "Also known as glorified manager slash scapegoat, basically."
+
+    show zeni neutral original
 
     z "I mean, I'm not really complaining. You do what you have to do."
 
@@ -48,9 +52,15 @@ label help_zeni:
 
     p  "I'm a pilot. A fairly new graduate actually. Only been here about 3 weeks."
 
+    show zeni eyes_rest
+
     z "That would explain why I don't recognize your name."
 
+    show zeni eyes_open
+
     p "Yeah, I haven't really met most of the personnel yet."
+
+    show zeni look_away sad frown
 
     "Zeni's eyes slide to the floor, and he goes uncomfortably quiet. Probably because all of the personnel that I just mentioned are very, very dead."
 
@@ -65,6 +75,8 @@ label help_zeni:
         "Ask him about his family.":
             p "So, um, do you have a family?"
 
+            show zeni look_at eyes_wide original neutral
+
             z "A daughter. She’s 6."
 
             "But no mention of a mother... Probably best I if didn’t pry."
@@ -75,19 +87,27 @@ label help_zeni:
 
             z "Racia."
 
+            show zeni eyes_open smile relax
+
             z "She’s a little songstress, just like her mother was."
 
             "With a sigh, Zeni leans against his box and gazes at me."
 
+            show zeni neutral original
+
             z "What about you?"
 
             p "Oh... I was raised in a communal domicile on Jenri Alpha."
+
+            show zeni eyes_wide raised frown
 
             z "So you were an orphan, then. I’m sorry."
 
             p "Don’t be. I never knew my parents."
 
             "Zeni balls his fists and grimaces."
+
+            show zeni look_away angry
 
             z "The war?"
 
