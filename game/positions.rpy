@@ -3,7 +3,7 @@ transform leftish_zeni:
     yalign 1.0
 
 transform middle:
-    xcenter 0.45
+    xcenter 0.42
     yalign 1.0
 
 transform leftish:

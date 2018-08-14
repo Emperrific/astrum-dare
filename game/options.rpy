@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "0.9"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -33,7 +33,7 @@ define gui.about = """
 Programming: Elaine M. Podosek ({a=https://patreon.com/empish/}Empish{/a})
 Writing: Vanessa Parker ({a=https://patchworkprincess.moe/}Azura{/a}), Renee Archbold ({a=https://www.astralore.com/}Archaeren{/a})
 Direction: Renee Archbold ({a=https://www.astralore.com/}Archaeren{/a})
-GUI Art: Vanessa Parker ({a=https://patchworkprincess.moe/}Azura{/a})
+GUI Design: Vanessa Parker ({a=https://patchworkprincess.moe/}Azura{/a})
 Character Art: Vale Magri ({a=https://www.astralore.com/}valeatory{/a})\n"""
 
 

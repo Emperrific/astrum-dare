@@ -483,7 +483,7 @@ label argument:
     #[fade in chill theme]
     call setup_rd_room(dissolve)
 
-    show fera eyes_wide raised open_neutral at center,flipped, parallaxed_f
+    show fera eyes_wide raised open_neutral at center, flipped, parallaxed_f
     show aran eyes_wide raised open_neutral at mid_right, flipped, parallaxed_a
     show misha eyes_wide concern open_neutral at rightish, flipped, parallaxed_m
     with dissolve
