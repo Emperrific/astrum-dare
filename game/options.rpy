@@ -67,7 +67,7 @@ define config.has_voice = False
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "<from 9>music/01_weirder_things_instrumental.mp3"
+define config.main_menu_music = "<from 30>music/01_weirder_things_instrumental.mp3"
 
 
 ## Transitions #################################################################
@@ -121,7 +121,7 @@ define config.window_hide_transition = Dissolve(.2)
 
 
 define config.default_music_volume = 0.5
-define config.default_sfx_volume = 0.5
+define config.default_sfx_volume = 0.7
 
 ## Preference defaults #########################################################
 

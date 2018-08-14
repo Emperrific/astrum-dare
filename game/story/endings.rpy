@@ -31,7 +31,7 @@ label vessel_activated:
 
     ai "Oxygen levels at: 98\%. Time until depletion: 6 minutes."
 
-    hide alarm with dissolve(1.5)
+    hide alarm with Dissolve(1.5)
 
     stop sound
 
@@ -727,5 +727,7 @@ label ultra_fail:
 label end_credits:
 
     stop music fadeout 2
+    show screen credits
+    pause
 
     return
