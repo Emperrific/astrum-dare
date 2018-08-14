@@ -178,7 +178,7 @@ label story:
 
     c "{i}Don’t you go and die! You hear me? You can’t die!{/i}"
 
-    #[play asteroid crash sound]
+    play sound "Asteroid_Impact_Louder.ogg"
 
     "An earsplitting crash sounds through Corsi’s relay."
 
@@ -548,9 +548,9 @@ label argument:
 
     m"Aren’t you gregarious all of a sudden?"
 
-    "If she heard that, the short woman shows no sign of ruffled feathers."
+    "The short woman pays no heed to the insult, thoughtfully curling a strand of her voluminous ponytail between her fingertips instead."
 
-    show zeni concern frown at leftish_zeni, parallaxed_z with dissolve
+    show zeni concern frown look_away at leftish_zeni, parallaxed_z with dissolve
     z"Uh, everyone?"
 
     show misha eyes_squint
@@ -565,7 +565,7 @@ label argument:
     show misha eyes_open frown original
     m"Is that so? Hmm."
 
-    show fera smile
+    show fera smile look_away raised
     f"Ah, I recognize you. Zeni Taro, right? Vice President of Security?"
     $zeni_name = "Zeni"
 
@@ -583,7 +583,7 @@ label argument:
 
     "Wow. This is kind of terrifying. A governor is one thing, but... this woman is one of the richest people in our solar system."
 
-    show zeni concern frown
+    show zeni concern frown look_at
     z"Anyway, now that we’re all friends, I have bad news."
 
     m"What could possibly be worse news at this stage?"

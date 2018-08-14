@@ -113,6 +113,8 @@ label help_zeni:
 
             p "Pirates."
 
+            show zeni look_at angry frown
+
             z "That’s even worse. I sure hope they did right by you on Jenri Alpha."
 
             p "It wasn’t a luxurious life, but it wasn’t a miserable one."
@@ -123,16 +125,26 @@ label help_zeni:
 
             "But then I blink, and the moment of bittersweet nostalgia is gone."
 
+            show zeni relax neutral
+
             "Zeni must notice my upset, because he nods quietly and goes back to searching."
 
             z "I’m almost done here. You should check in with the others. Thanks for the chat."
+
+            p "Okay."
+
+            hide zeni with dissolve
 
 
         "Ask him why he joined security.":
 
             p "So, um, what made you go into a career in station security?"
 
+            show zeni look_at eyes_wide original neutral
+
             z "The pay. Plus I’m told I have an aptitude. Supposedly."
+
+            show zeni look_at smirk relax
 
             "Zeni winks at me and flexes his arm."
 
@@ -144,13 +156,19 @@ label help_zeni:
 
             p "So you didn’t aspire to protect the innocent or something like that?"
 
+            show zeni one_raised part_smile
+
             z "Maybe you have me confused with Governor Ceani."
 
             "He lets out a warm, deep laugh that’s soft on the ears."
 
+            show zeni neutral original look_away
+
             z "There {i}is{/i} someone I need to protect. But the only way I can protect her is by being here."
 
             p "What do you mean?"
+
+            show zeni frown look_at
 
             z "It’s complicated. What about you? Did you dream of flying transports back and forth?"
 
@@ -158,13 +176,21 @@ label help_zeni:
 
             "A few tears slide down my face without warning. I wipe them away quickly."
 
+            show zeni eyes_wide
+
             z "...Oh."
+
+            show zeni eyes_rest neutral concern
 
             "Zeni seems to understand and accept my sudden wave of emotion, closing his eyes and giving a solemn nod."
 
             "For a moment, neither of us know what to say. The heavy weight of lost life bears down on our mundane conversation."
 
+            show zeni relax eyes_open
+
             z "Let’s focus on keeping ourselves alive for now. There will be time for everything else later."
+
+            show zeni raised
 
             "Zeni points out a particularly large crate."
 
@@ -172,7 +198,13 @@ label help_zeni:
 
             "We heave both ends and finally get it open."
 
+            show zeni smile relax
+
             z "Alright. Got it from here. You should check in with the others. Thanks for the chat."
+
+            p "Okay."
+
+            hide zeni with dissolve
 
     if chat_counter == 3:
         jump power_up
