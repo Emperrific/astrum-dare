@@ -126,7 +126,7 @@ default cool = False
 
 label main_menu:
     stop music
-    play music config.main_menu_music
+    play music config.main_menu_music fadein 1.0
     call screen main_menu
     return
 # The game starts here.
@@ -143,6 +143,8 @@ label start:
     # else:
     #     "You dun fucked up"
     #
+    # show screen credits
+    # pause
     jump story
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the

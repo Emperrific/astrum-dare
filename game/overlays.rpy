@@ -38,7 +38,7 @@ image alarm:
     "red_alarm_overlay.png"
     alpha 0.0
     linear 0.06 alpha 0.4
-    linear 1.4 alpha 0.6
+    linear 1.4 alpha 0.65
     linear 0.65 alpha 0.2
     linear 1.4 alpha 0.6
     linear 0.9 alpha 0.0
