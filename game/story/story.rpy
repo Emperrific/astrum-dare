@@ -505,78 +505,101 @@ label argument:
     f"Not a single plan to get us out of here, but you’re cracking jokes?"
 
     show fera angry
-    show misha angry
+    show misha angry look_at
     "The two women scowl at each other. I do not want any part of that."
 
     p"Okay, okay. Look. I don’t know what happened here, but it doesn’t matter. As you know, the hangar is done for."
 
     p"The only ships left on the station are at the auxiliary dock. Anyone know where that is?"
 
+    show fera look_away concern neutral
     "The short woman’s face becomes thoughtful."
 
     f"So you’re thinking we can still get out of here after all?"
 
     p"Yes. If we can get there in time."
-
+    show fera part_smile original look_at
     f"Well, then. I can show us to the docks if you have a plan."
 
+    show misha eyes_narrow
     "The woman in the lab coat snorts derisively."
 
     m"Aren’t you gregarious all of a sudden?"
 
     "If she heard that, the short woman shows no sign of ruffled feathers."
 
+    show zeni concern frown at leftish_zeni, parallaxed with dissolve
     z"Uh, everyone?"
 
+    show misha eyes_squint
     m"Who’s this... peon?"
 
+    show zeni one_raised
     z"Misha, we’ve met at least 4 times..."
 
     "I’ll take that to mean that the woman in the lab coat’s name is Misha."
     $misha_name = "Misha"
 
+    show misha eyes_open frown original
     m"Is that so? Hmm."
 
+    show fera smile
     f"Ah, I recognize you. Zeni Taro, right? Vice President of Security?"
     $zeni_name = "Zeni"
 
+    show zeni neutral
     z"That’s me. Although I don’t think I know you."
 
+    show fera neutral
     f"Fera Mycia. Charmed, I’m sure, though you’ll forgive me if we forgo the rest."
     $fera_name = "Fera"
 
     p"Wait. Mycia as in the colony?"
 
+    show fera smirk
     f"Very good. Yes. My... organization... is the proprietor of Mycia Beta’s colonization efforts."
 
     "Wow. This is kind of terrifying. A governor is one thing, but... this woman is one of the richest people in our solar system."
 
+    show zeni concern frown
     z"Anyway, now that we’re all friends, I have bad news."
 
     m"What could possibly be worse news at this stage?"
 
+    show zeni part_frown
     z"Um... before this happened, I was overseeing Maintenance."
 
+    show fera eyes_narrow one_raised neutral
     f"And...?"
 
+    show zeni eyes_squint
     z"They were removing the power cores from the ships in the auxiliary dock. For refueling."
 
     #[fade out music to silence]
+    stop music fadeout 3.0
+
+    show aran eyes_wide
+    show fera eyes_wide part_neutral
+    show misha eyes_wide part_neutral
 
     "Everyone falls silent."
 
+    show zeni look_away
     z"After that, there was an accident in Maintenance. There’s no way they had time to finish the refueling."
 
+    show zeni frown one_raised
     z"Maintenance also happens to be very, um, electrifying right now."
 
     p"So... you’re saying the ships have no power."
 
     "He slumps his shoulders and leans against a nearby wall."
 
+    show zeni concern eyes_narrow
     z"None."
 
     p"No... That’s..."
 
+    show fera eyes_narrow angry part_frown
     f"Unbelievable... Of all the Six-forsaken hellholes to die on...!"
 
     "Fera is livid. She lashes out at the nearest object—which happens to be a steel table leg. My foot throbs just from watching her, but Fera just gives the table a look of furious disgust."
@@ -585,10 +608,12 @@ label argument:
 
     "Pausing with a deep breath, Aran tries his best to comfort the group."
 
+    show aran eyes_open neutral concern
     a"Surely there is something we can do. We must not give up."
 
     z"Wish I shared your optimism, Governor."
 
+    show aran smile original
     a"Please call me Aran. There is no need for formalities in a situation so dire."
 
     f"As if it matters what he calls you? We’re all going to be dead soon anyway."
@@ -597,16 +622,20 @@ label argument:
 
     "Misha, who has been quiet for some time, suddenly breaks the silence."
 
+    show misha eyes_open original part_neutral
     m"Maybe we won’t be."
 
     f"Oh, {i}now{/i} you have an idea?"
 
+    show misha angry eyes_narrow
     m"Be silent, you vile woman. I’m sorry that all that money can’t buy you a personality."
 
+    show fera part_smirk
     f"It sure can buy you, though."
 
     "Fera’s purring voice seems to intimidate Misha, because she drops her nasty attitude somewhat."
 
+    show misha eyes_open neutral original
     m"Ahem. I provided a client with a new fuel cell schematic about two weeks ago."
 
     "Eyes light up cautiously around the room."
@@ -615,16 +644,20 @@ label argument:
 
     "She pauses and starts tapping her foot again in anger."
 
+    show misha angry
     m"No one ever thinks to ask my leave before moving my masterpieces. So you’ll need to look for it."
 
+    show zeni smile original
     z"You don’t have to tell me twice!"
 
     "Zeni begins digging through shelves and containers with fervor, his previous lackadaisical attitude fading away in the face of hope for survival."
 
+    show fera one_raised part_neutral
     f"Me? Rifle through boxes? Well... if there’s no other way."
 
     p"Well, that settles it. We need that power cell. Everyone, split up."
 
+    show aran angry neutral eyes_narrow
     "Misha leans against a table while everyone else gets to work, but a commanding glare from Aran motivates her to join in."
 
     "Just as we begin, a familiar yet unwelcome sound graces our ears."
@@ -632,12 +665,15 @@ label argument:
     #[play alarm sound]
 
     #[display red light fade]
+    show alarm
 
     ai"Warning: Catastrophic damage to multiple sectors detected."
 
     ai"Estimated time before asteroid storm reaches critical proximity: 30 minutes."
 
     "As it stands, there is one person for each corner of the room. I find myself milling around, not sure where to go."
+
+    hide alarm
 
     "I should just go help someone with their share. But who?"
 
