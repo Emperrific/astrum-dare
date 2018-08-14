@@ -3,8 +3,8 @@ label vessel_activated:
 
     "The security screen clicks, changing to show the words Vessel Activated."
 
-    show aran eyes_closed look_at raised part_smile at cright, parallaxed
-    show misha eyes_closed look_at raised part_smile at right, parallaxed
+    show aran eyes_closed look_at raised part_smile at cright, parallaxed_a
+    show misha eyes_closed look_at raised part_smile at right, parallaxed_m
     with moveinright
 
     a "Yes! You did it! Amazing!"
@@ -41,7 +41,7 @@ label vessel_activated:
     show misha eyes_narrow look_at
     show aran look_at eyes_open scared frown
     "Misha makes a quiet and cold point as I open the gate between the control room and launch dock."
-    show zeni  part_smile eyes_open raised at leftish_zeni, parallaxed with easeinleft
+    show zeni  part_smile eyes_open raised at leftish_zeni, parallaxed_z with easeinleft
     show fera neutral raised
     "As soon as the doors open, I see Zeni jump down from the back panel of the ship. He flashes me a double thumbs up."
 
@@ -487,8 +487,8 @@ label ultra_fail:
 
     "The last ship goes into emergency lockdown."
 
-    show misha angry open_neutral eyes_wide at cright, parallaxed
-    show aran scared at right, parallaxed
+    show misha angry open_neutral eyes_wide at cright, parallaxed_m
+    show aran scared at right, parallaxed_a
     with moveinright
 
     m "{i}What have you done?!!{/i}"

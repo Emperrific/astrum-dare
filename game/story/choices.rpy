@@ -650,17 +650,18 @@ label power_up:
 
 
     #Puzzle for 4 person ship
-    # hide zeni
-    # hide misha
-    # hide fera
-    # hide aran
-    # window hide
-    # with dissolve
-    #
-    # $num_active = 0
-    # $turn_on(seeds2[0])
-    #
-    # $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
+
+    hide zeni
+    hide misha
+    hide fera
+    hide aran
+    window hide
+    with dissolve
+
+    $num_active = 0
+    $turn_on(seeds2[0])
+
+    $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
 
 
     if activation_success == True:
@@ -675,11 +676,11 @@ label power_up:
     #If success 🡆 1 PERSON LEFT BEHIND ENDINGS
 
     #If fail
-        show misha angry open_neutral eyes_wide at left, parallaxed with moveinleft
+        show misha angry open_neutral eyes_wide at left, parallaxed_m with moveinleft
 
         m "What happened?! What did you just do?!"
 
-        show aran scared at right, parallaxed
+        show aran scared at right, parallaxed_a
 
         with moveinright
 
@@ -695,18 +696,18 @@ label power_up:
 
         "This is my last chance."
 
-        # hide zeni
-        # hide misha
-        # hide fera
-        # hide aran
-        # with dissolve
-        #
-        # $num_active = 0
-        # $turn_on(seeds1[0])
-        #
-        # $activation_success = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+        hide zeni
+        hide misha
+        hide fera
+        hide aran
+        with dissolve
 
-        $activation_success = True
+        $num_active = 0
+        $turn_on(seeds1[0])
+
+        $activation_success = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+
+
 
         if activation_success == True:
             jump vessel_activated
