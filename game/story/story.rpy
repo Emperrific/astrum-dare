@@ -189,7 +189,7 @@ label story:
 
     "He’s unreachable. What the...?"
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -670,7 +670,7 @@ label argument:
 
     "Just as we begin, a familiar yet unwelcome sound graces our ears."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 

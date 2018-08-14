@@ -535,7 +535,7 @@ label power_up:
 
     "All this stuff will be reduced to debris soon, anyway. At this point we’re all throwing things and ripping open boxes."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -642,7 +642,7 @@ label power_up:
     $ num_active = 0
     $turn_on(seeds3[0])
 
-    $renpy.call_screen("pipeline_puzzle", seeds3, tasks3)()
+    $renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)()
 
     play music mus_puzzle fadeout 3 fadein 3
 

@@ -18,7 +18,7 @@ label vessel_activated:
 
     p "Okay, we have to go to the ship, right away."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 
@@ -509,7 +509,7 @@ label ultra_fail:
 
     "Each of us is trying to make peace in their own way, all hope lost."
 
-    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+    $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
 

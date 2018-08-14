@@ -152,8 +152,11 @@ define len_unit = 50
 default current_drag = None
 
 
-screen pipeline_puzzle(processors=[], tasks=[]):
+screen pipeline_puzzle(processors=[], tasks=[], time=0):
     #add "#fff"
+
+    if time > 0:
+        timer time action Return(Function(valid_puzzle, processors, tasks))
 
     frame:
         at delayed_fall_in
