@@ -632,8 +632,22 @@ label power_up:
 
     #[downer puzzle that you can’t win]
 
+    hide zeni
+    hide misha
+    hide fera
+    hide aran
+    window hide
+    with dissolve
+
+    $ num_active = 0
+    $turn_on(seeds3[0])
+
+    $renpy.call_screen("pipeline_puzzle", seeds3, tasks3)()
+
     play music mus_puzzle fadeout 3 fadein 3
 
+    show misha frown at right, parallaxed_m
+    show aran frown sad at cright, parallaxed_a
     m "There’s no way we can get through this in time."
 
     "She’s right. Damn it! I pound my fist against the side of the console."

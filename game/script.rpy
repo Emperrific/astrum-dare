@@ -5,6 +5,44 @@
 
 define cright = Transform(xalign=0.75, yalign=1.0)
 
+default lens3 = [16,15,14,13,13,11,10]
+default seeds3 = [
+    Processor("1", lens3[0], lens3),
+    Processor("2", lens3[0], lens3),
+    Processor("3", lens3[0], lens3),
+    Processor("4", lens3[0], lens3),
+    Processor("5", lens3[0], lens3),
+    Processor("6", lens3[0], lens3),
+    Processor("7", lens3[0], lens3)
+    ]
+
+default task3B = Task("Z", 6, "#0f3")
+default task3E = Task("Y", 4, "#f07")
+default task3F = Task("X", 6, "#cd0")
+default task3H = Task("V", 6, "#f70")
+default task3J = Task("U", 3, "#999")
+default task3K = Task("T", 8, "#fff")
+default task3L = Task("S", 5, "#ff0")
+default task3M = Task("R", 4, "#0ff", [task3K, task3J])
+default task3N = Task("Q", 3, "#f0f", [task3H])
+
+default tasks3 = [
+    Task("P", 6, "#00f", [task3L]),
+    task3B,
+    Task("O", 4, "#f00", [task3B]),
+    Task("N", 6, "#07f", [task3E]),
+    task3E,
+    task3F,
+    Task("M", 8, "#70f", [task3N]),
+    task3H,
+    Task("L", 3, "#0f7", [task3F, task3M]),
+    task3J,
+    task3K,
+    task3L,
+    task3M,
+    task3N,
+    ]
+
 default lens2 = [16,15,14,13,12,11,10]
 default seeds2 = [
     Processor("1", lens2[0], lens2),
