@@ -22,11 +22,15 @@ label help_zeni:
     $talk_zeni = True
     $chat_counter += 1
 
+    show zeni look_at at middle, parallaxed_z with dissolve
+
     "I decide to give Zeni a hand."
 
     "From the looks of it, he’s in charge of the heaviest stuff."
 
     "I give him a little wave as I approach.  He looks baffled, as if he surprised that I would help him."
+
+    show zeni smile eyes_open relax
 
     "Despite his surprise, he smiles when I grab one side of a particularly large storage container that he’s taking apart."
 

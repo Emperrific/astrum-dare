@@ -432,7 +432,11 @@ label argument:
 
         p"Yes, help. There are people trapped in this room. It’s on lockdown, and I can’t open it."
 
+        show zeni eyes_narrow original neutral
+
         "He stops for a minute to think."
+
+        show zeni eyes_wide relax
 
         z"...Oh. Oh!"
 
@@ -452,15 +456,21 @@ label argument:
 
         p"Zeni! There are people in here!"
 
+        show zeni eyes_wide frown look_at
+
         z"What? Why didn’t they evacuate?"
 
         "Zeni walks up beside me to investigate the door."
 
         p"The door’s on lockdown. I can’t open it."
 
+        show zeni eyes_wide concern
+
         z"Lockdown? Why?... Doesn’t matter. Let me see."
 
         "I step aside so Zeni can mess with the panel. After a moment, the door opens."
+
+        show zeni eyes_open smile relax
 
         z"Tada!"
 
@@ -478,14 +488,14 @@ label argument:
     show misha eyes_wide concern open_neutral at rightish, flipped, parallaxed_m
     with dissolve
 
-    pause 0.5
+    pause 0.7
 
     show fera eyes_open relax part_smirk
     show aran eyes_open relax smile
     show misha eyes_open relax smile
     with dissolve
 
-    "Three shocked faces stare back at us, before their expressions melt into relief."
+    "Three shocked faces stare back at us before their expressions melt into relief."
 
     a"Look! We’re saved, see?"
 
