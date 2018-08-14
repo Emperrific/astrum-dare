@@ -111,6 +111,11 @@ image space hallway = "hallway_windows_space_bg.png"
 default size = (600,800)
 default cool = False
 
+label main_menu:
+    stop music
+    play music config.main_menu_music
+    call screen main_menu
+    return
 # The game starts here.
 
 label start:
