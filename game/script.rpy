@@ -108,6 +108,18 @@ image bg rd room = "spaceship-1511655_1920.jpg"
 image space control room = "control_room_bg.png"
 image space hallway = "hallway_windows_space_bg.png"
 
+image Patchwork = "images/patchwork princess splash.png"
+image Astralore = "images/astralore splash.png"
+
+label splashscreen:
+    show Astralore with dissolve
+    $ renpy.pause (2, hard=True)
+    hide Astralore with dissolve
+    show Patchwork with dissolve
+    $ renpy.pause (2, hard=True)
+    hide Patchwork with dissolve
+    return
+
 default size = (600,800)
 default cool = False
 
