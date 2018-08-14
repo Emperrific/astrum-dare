@@ -437,28 +437,31 @@ label zeni_lives:
     f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take that nobody?"
     show zeni look_away eyes_narrow angry frown
     z "Okay, that’s enough."
-    show misha part_smirk look_away one_raised
+    show misha part_smirk look_away one_raised yes_narrow
     show fera look_away angry frown
     "Misha laughs mockingly at Fera."
 
     m "Maybe this is your karma for being such an evil bitch."
-
-    "Aran is the only one who remains quiet. He drops to his knee in prayer, then addresses me softly."
-
+    show fera look_at eyes_squint
+    show misha angry frown
+    show aran eyes_rest
+    "Aran is the only one who remains quiet. He presses a hand to his chest in prayer, then addresses me softly."
+    show aran look_at eyes_narrow relax
     a "If this is the only way, then so be it..."
-
+    show black with fade
     "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
 
     "How can I possibly explain to three people why I’m leaving them to die?"
 
     "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
-
+    show zeni look_at scared neutral
+    hide black with fade
     p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
 
     "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
 
     p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
-
+    show zeni eyes_rest raised part_neutral
     "Zeni softly taps my shoulder as the three others begin to accept their fate with a combination of reflection, weeping, and fury."
 
     z "We should go."
@@ -470,41 +473,49 @@ label misha_lives:
 
     $survivor = "Misha"
     show zeni eyes_wide raised part_neutral
-    show misha eyes_wide raised part_neutral
+    show misha eyes_wide raised neutral
     show aran eyes_wide raised part_neutral
     show fera eyes_wide raised part_neutral
     f "What do you mean, only Misha?!"
+    show misha part_smirk raised eyes_narrow
 
     "Everyone is confused and dismayed. Misha smiles arrogantly, but her shoulders slump in relief."
+    show misha smirk
     show aran look_away eyes_narrow scared neutral
     a "The ship is... too small..."
-
+    show zeni scared part_frown eyes_squint
     z "But my little girl... No! Please no!"
-
-    f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take *her*?"
-
+    show fera eyes_squint one_raised part_frown
+    f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take {i}her?{/i}"
+    show misha part_smirk look_away one_raised eyes_narrow
+    show fera look_away angry frown
     "Misha laughs mockingly at Fera, crossing her arms triumphantly."
 
     m "Maybe this is your karma for being such an evil bitch."
-
-    "Aran is the only one who remains quiet. He drops to his knee in prayer, then addresses me softly."
-
+    show fera look_at eyes_squint
+    show misha angry smirk
+    show aran eyes_rest
+    "Aran is the only one who remains quiet. He presses a hand to his chest in prayer, then addresses me softly."
+    show aran look_at eyes_narrow relax
     a "If this is the only way, then so be it..."
-
+    show black with fade
     "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
 
     "How can I possibly explain to three people why I’m leaving them to die?"
 
     "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
-
+    show misha neutral look_at eyes_open
+    hide black with fade
     p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
 
     "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
 
     p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
-
+    show aran look_away scared
+    show zeni behind misha
+    show misha relax look_away eyes_narrow frown at left, parallaxed_m with easeoutleft
     "Misha walks briskly towards the ship as the three others begin to accept their fate with a combination of reflection, weeping, and fury."
-
+    show misha look_at eyes_open part_frown concern
     m "We haven’t time to waste."
 
     jump final_escape
@@ -519,35 +530,39 @@ label aran_lives:
     f "What do you mean, only Aran?!"
 
     "Everyone is confused and dismayed. Aran looks extremely shocked at the sound of his name. Perhaps he was already resigned to death..."
-
+    show aran scared frown eyes_open
     a "Are you sure about this?"
-
+    show zeni scared part_frown eyes_squint
     z "But my little girl... No! Please no!"
-
+    show fera eyes_squint one_raised part_frown
     f "Clearly you’ve gone nuts. You’re really gonna leave us all here and take that worthless figurehead?"
-
+    show misha part_smirk look_away one_raised eyes_narrow
+    show fera look_away angry frown
     "Misha laughs mockingly at Fera."
 
     m "Maybe this is your karma for being such an evil bitch."
-
-    "Aran is the only one who remains quiet. He drops to his knee in prayer, then addresses me softly."
-
+    show fera look_at eyes_squint
+    show misha angry frown
+    show aran eyes_rest
+    "Aran is the only one who remains quiet. He presses a hand to his chest in prayer, then addresses me softly."
+    show aran look_at eyes_narrow relax
     a "If this is what you want, then I am in no position to say no."
-
+    show black with fade
     "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
 
     "How can I possibly explain to three people why I’m leaving them to die?"
 
     "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
-
+    show aran eyes_open
+    hide black with fade
     p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
 
     "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
 
     p "This is my fault... I’m so sorry. I won’t ask any of you to forgive me."
-
+    show aran eyes_rest scared
     "Aran bows apologetically as the three others begin to accept their fate with a combination of reflection, weeping, and fury."
-
+    show aran eyes_narrow
     a "We must go."
 
     jump final_escape
@@ -558,43 +573,58 @@ label fera_lives:
     show zeni eyes_wide raised part_neutral
     show misha eyes_wide raised part_neutral
     show aran eyes_wide raised part_neutral
-    show fera eyes_wide raised part_neutral
+    show fera eyes_narrow one_raised part_smirk
     f "Hah! At least someone here has a bit of sense."
-
+    show aran angry eyes_squint frown look_away
     "Aran’s face darkens, and he turns away. It appears he is very unhappy with my decision."
-
+    hide fera with None
+    show fera eyes_rest raised smirk at center, parallaxed_f, flipped
+    show fera at left, parallaxed_f, flipped with easeoutleft
+    show zeni look_away scared part_frown eyes_squint
     "Everyone is confused and dismayed. Fera immediately begins walking towards the ship, but Zeni grabs her arm."
+    hide zeni with None
+    show zeni eyes_wide look_away raised at cleft, parallaxed_z, flipped
+    pause(.01)
+    hide fera with None
+    show fera eyes_wide one_raised part_frown look_away at left, parallaxed_f
+    show aran look_at
+    show misha look_away frown
 
     z "Fera!"
-
+    show fera angry
     f "What now? Let go of me!"
+    show zeni scared part_frown eyes_narrow
 
     "Zeni holds onto her arm tightly, his voice pleading."
 
     z "Please. I have a daughter. Racia Taro. She’s only a child."
-
+    show fera one_raised part_neutral eyes_open
     f "What...?"
 
     z "I’m begging you. For someone like you, it would be nothing. Help her."
-
+    show fera neutral eyes_squint look_at raised
     "Fera stands still for a moment, looking surprisingly thoughtful."
-
+    show fera neutral concern look_away eyes_narrow
     f "No promises."
+    hide fera with None
+    show fera relax eyes_narrow look_away at left, parallaxed_f, flipped
 
     "She shakes him off and walks away onto the ship."
 
     hide fera with easeoutleft
-
+    show zeni eyes_rest frown
+    show misha look_at eyes_narrow part_frown angry
     "Misha scowls darkly at me and taps her foot furiously."
 
     m "So you’ve shown your true colors. I can’t believe you let her get her claws in you."
-
+    show black with fade
     "I close my eyes bitterly. I can’t bring myself to say anything to everyone."
 
     "How can I possibly explain to three people why I’m leaving them to die?"
 
     "How do I tell them that this is my fault? That my incompetence doomed two more people to certain death...? If only I could do this over again..."
-
+    show misha frown
+    hide black with fade
     p "Everyone... I’m sorry. The ship I activated can only fit a pilot and 1 passenger..."
 
     "I wish I could talk to them and make them okay with this. But we have less than 3 minutes left."
@@ -651,9 +681,9 @@ label ultra_fail:
     with moveinright
 
     m "{i}What have you done?!!{/i}"
-
+    show misha  at cleft, parallaxed_m with easeoutleft
     "Misha lunges forward, shoving me aside to look at the console."
-
+    show misha look_away part_frown
     m "You’ve killed us. You complete and total imbecile... you’ve killed us all!"
     show aran eyes_narrow look_away neutral
     "Aran’s gaze is focused on the view of Mycia Beta."
@@ -671,12 +701,15 @@ label ultra_fail:
     $ renpy.sound.play("Alarm_Loop.ogg")
 
     show alarm
-
+    show misha eyes_wide scared look_at part_frown
+    show aran eyes_wide look_at
     ai "Warning: Life support systems are offline."
-
+    show misha eyes_squint
+    show aran eyes_narrow
     ai "Oxygen levels at: 22\%. All personnel, please use auxiliary oxygen sources..."
-
-    hide alarm with dissolve(1.5)
+    show misha look_away frown
+    show aran look_away frown eyes_narrow
+    hide alarm with Dissolve(1.5)
 
     stop sound
 
