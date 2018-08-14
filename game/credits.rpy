@@ -14,7 +14,7 @@ screen credits:
             use credits_bye
 
 screen astra_credits:
-    
+
     add "astralore splash.png" zoom 0.5 xalign 1.0 yalign 0.5
     vbox:
         xalign 0.1
@@ -26,7 +26,7 @@ screen astra_credits:
         text "Puzzle Design" xoffset 20
         text "Renee Archbold (Archaren):" size 40
         text "Writing" xoffset 20
-        text "Direction" xoffset 20
+        text "Directing" xoffset 20
         text "Music Sourcing" xoffset 20
 
 screen patchwork_credits:
@@ -45,7 +45,7 @@ screen patchwork_credits:
 image credits emp = im.MatrixColor("emp_icons.png", im.matrix.desaturate())
 
 screen emp_credits:
-    
+
     add "credits emp" xalign 0.95 yalign 0.5
     vbox:
         xalign 0.1
@@ -57,7 +57,7 @@ screen emp_credits:
         text "Effects Programming" xoffset 20
         text "GUI Programming" xoffset 20
         text "There was a lot of programming okay?" xoffset 20
-    
+
 screen credits_bye:
     text "Thanks for playing!" at truecenter:
         size 120
