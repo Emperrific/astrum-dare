@@ -18,16 +18,22 @@ label vessel_activated:
 
     p "Okay, we have to go to the ship, right away."
 
-    #[play alarm sound]
+    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
 
-    #[display red light fade]
+    show alarm
+
     show aran look_away eyes_wide raised part_frown
     show misha look_away eyes_narrow angry part_frown
+
     ai "Warning: Catastrophic damage to multiple sectors detected."
 
     ai "Warning: Life support systems are offline."
 
     ai "Oxygen levels at: 98\%. Time until depletion: 6 minutes."
+
+    hide alarm with dissolve
+
+    stop sound
 
     "The life support?! Oh, no. We {i}really{/i} have to go now."
     show misha eyes_rest frown
@@ -501,9 +507,17 @@ label ultra_fail:
 
     "Each of us is trying to make peace in their own way, all hope lost."
 
+    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
+
+    show alarm
+
     ai "Warning: Life support systems are offline."
 
     ai "Oxygen levels at: 22\%. All personnel, please use auxiliary oxygen sources..."
+
+    hide alarm with dissolve
+
+    stop sound
 
     "I’m sorry, Corsi... but it appears I’ll be joining you after all."
 

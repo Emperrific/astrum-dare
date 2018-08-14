@@ -535,13 +535,17 @@ label power_up:
 
     "All this stuff will be reduced to debris soon, anyway. At this point we’re all throwing things and ripping open boxes."
 
-    #[play alarm sound]
+    $ renpy.sound.play("Alarm_Loop.ogg",loop=True)
 
-    #[display red light fade]
+    show alarm
 
     ai "Warning: Catastrophic damage to multiple sectors detected."
 
     ai "Estimated time before asteroid storm reaches critical proximity: 23 minutes."
+
+    hide alarm with dissolve
+
+    stop sound
 
     "Just as the voice starts to fade, I hear a shout of triumph."
 
