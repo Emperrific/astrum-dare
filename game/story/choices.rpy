@@ -1,13 +1,14 @@
 label choices:
 
     menu:
-        "Help Zeni" if talk_zeni == False:
+        with dissolve
+        "Help Zeni." if talk_zeni == False:
             jump help_zeni
-        "Help Misha" if talk_misha == False:
+        "Help Misha." if talk_misha == False:
             jump help_misha
-        "Help Aran" if talk_aran == False:
+        "Help Aran." if talk_aran == False:
             jump help_aran
-        "Help Fera:" if talk_fera == False:
+        "Help Fera." if talk_fera == False:
             jump help_fera
 
     # After 3 are chosen, go to Power Cell Found
@@ -56,6 +57,7 @@ label help_zeni:
     "Let’s try a more positive question."
 
     menu:
+        with dissolve
         "Ask him about his family.":
             p "So, um, do you have a family?"
 
@@ -224,6 +226,7 @@ label help_misha:
     "Maybe she just needs some help calming down."
 
     menu:
+        with dissolve
         "Explain that organization would have solved this problem.":
             p "Misha, if you’d be willing to consider an idea..."
 
