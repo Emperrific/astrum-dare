@@ -5,13 +5,12 @@
 define mus_start = "music/01_weirder_things_instrumental.mp3"
 define mus_build = "music/02_illuminate_instrumental.mp3"
 define mus_sad = "<to 100>music/06_the_attic_instrumental.mp3"
-define mus_relax = "music/03_blue_hue_instrumental.mp3"
-define mus_puzzle = "music/04_runner_instrumental.mp3"
-define mus_tense = "music/05_the_seeds_of_unrest_instrumental.mp3"
-define mus_escape = "music/o7_like_an_angel_instrumental.mp3"
 
 
 define p = Character("[player_name]")
+python:
+    player_name = renpy.input("Please input your name")
+    player_name = player_name.strip()
 
 define c = Character("Corsi")
 define ai = Character("ZENTRI AI")
@@ -32,8 +31,6 @@ default talk_zeni = False
 default talk_misha = False
 default talk_aran = False
 default talk_fera = False
-default one_death = False
-default activation_success = False
 
 
 # The game starts here.
@@ -49,7 +46,7 @@ label story:
 
 
     if not player_name:
-         $player_name = "Serin"
+         $player_name = "Kestri"
     #[play crackle sound]
 
     call setup_sublevel(dissolve)
@@ -270,7 +267,7 @@ label maintenence_center:
     "I dash to the person’s side. It’s a man in a security uniform. He’s not dead... I think."
 
     p"Hey! You okay?!"
-    show zeni eyes_rest concern neutral at leftish, parallaxed
+    show zeni eyes_rest concern neutral at leftish_zeni, parallaxed
     with dissolve
 
     show zeni eyes_rest concern neutral
@@ -396,7 +393,7 @@ label argument:
         "All of a sudden, a voice calls out to me."
 
         z"Hey! You over there!"
-        show zeni at left with moveinleft
+        show zeni at leftish_zeni, parallaxed with moveinleft
         "A man in a security uniform runs up to me."
         show zeni angry frown
         z"What are you doing? You should be evacuating."
@@ -453,7 +450,20 @@ label argument:
 
 
 
-    play  music mus_relax fadeout 3 fadein 6
+    #[fade in chill theme]
+    call setup_rd_room(dissolve)
+
+    show fera eyes_wide raised open_neutral at center,flipped, parallaxed
+    show aran eyes_wide raised open_neutral at mid_right, flipped, parallaxed
+    show misha eyes_wide concern open_neutral at rightish, flipped, parallaxed
+    with dissolve
+
+    pause 0.5
+
+    show fera eyes_open relax part_smirk
+    show aran eyes_open relax smile
+    show misha eyes_open relax smile
+    with dissolve
 
     "Three shocked faces stare back at us, before their expressions melt into relief."
 
@@ -463,23 +473,31 @@ label argument:
 
     a"Thank you so much for opening that door. We were in quite some trouble."
 
+    show aran part_smile 
     a"Ah, my manners! My name is Aran. Aran Ceani, governor-elect of the Saru Territories."
     $aran_name = "Aran"
 
     "A governor? That explains the familiar face."
 
+    show aran eyes_rest original
     "He gives a dignified bow. I feel flattered but also a bit awkward."
+    show aran eyes_open
 
     p"My name is [player_name] Kestri. You’re welcome, but we need to hurry."
 
     a"Oh, yes. Ah..."
 
+    show misha look_away angry frown
     "As Aran looks around nervously, the tall woman in the lab coat taps her foot angrily and speaks."
 
+    show misha one_raised
     m"Hurry for what reason? Should we not have an extravagant dinner while we wait patiently for our end?"
 
+    show fera one_raised frown eyes_narrow
     f"Not a single plan to get us out of here, but you’re cracking jokes?"
 
+    show fera angry
+    show misha angry
     "The two women scowl at each other. I do not want any part of that."
 
     p"Okay, okay. Look. I don’t know what happened here, but it doesn’t matter. As you know, the hangar is done for."

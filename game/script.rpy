@@ -19,6 +19,7 @@ default tasks1 = [
 
 image bg control room = "control_room_overlay.png"
 image bg hallway = "hallway_windows_overlay.png"
+image bg rd room = "spaceship-1511655_1920.jpg"
 
 
 image space control room = "control_room_bg.png"
