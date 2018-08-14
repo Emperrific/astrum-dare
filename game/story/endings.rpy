@@ -77,6 +77,7 @@ label vessel_activated:
 
 label one_left:
     menu:
+        with dissolve
         "...Zeni has to stay behind.":
             jump zeni_lost
         "...Misha has to stay behind.":
@@ -405,6 +406,7 @@ label one_left:
 label three_left:
 
     menu:
+        with dissolve
         "...Only Zeni can come with me.":
             jump zeni_lives
         "...Only Misha can come with me.":

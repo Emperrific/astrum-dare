@@ -47,7 +47,7 @@ label story:
 
     #[show secure sublevel hall bg]
 
-    stop music
+    stop music fadeout 2
     python:
         player_name = renpy.input("Please enter your name.")
         player_name = player_name.strip()
@@ -58,11 +58,12 @@ label story:
     #[play crackle sound]
 
     call setup_sublevel(dissolve)
-    pause
+    pause (1)
 
     show screen freak_parent
 
     c "{i}Where are you now?{/i}"
+    with dissolve
 
     #[fade in tense music]
     $ renpy.music.set_volume(.3)
@@ -249,11 +250,14 @@ label story:
 
                 p"...I just jinxed it, didn’t I?"
 
-                "My accidental prophecy comes true. When I scan my wrist on the panel, I see a message flash across it: Insufficient Clearance Level. Level β Required."
+                "My accidental prophecy comes true. When I scan my wrist on the panel, I see a message flash across it: Insufficient Clearance Level. Level A Required."
+
+                "I guess it's not really a surprise that I don't have clearance for this. One screwup in there could suffocate everyone on board."
 
                 "There’s no way I’m getting in here. Time to try somewhere else."
 
                 menu:
+                    with dissolve
                     "Maintenance Center":
                         jump maintenence_center
 
@@ -372,7 +376,7 @@ label maintenence_center:
 
 label r_and_d:
 
-    p"I’ll just go with the Research & Development Hub, then."
+    p"I’ll just go with the Research & Development Hub, then." with dissolve
 
     "Continuing down the hall, I arrive quickly in front of the door to the R&D Hub."
 
@@ -428,7 +432,11 @@ label argument:
 
         p"Yes, help. There are people trapped in this room. It’s on lockdown, and I can’t open it."
 
+        show zeni eyes_narrow original neutral
+
         "He stops for a minute to think."
+
+        show zeni eyes_wide relax
 
         z"...Oh. Oh!"
 
@@ -448,15 +456,21 @@ label argument:
 
         p"Zeni! There are people in here!"
 
+        show zeni eyes_wide frown look_at
+
         z"What? Why didn’t they evacuate?"
 
         "Zeni walks up beside me to investigate the door."
 
         p"The door’s on lockdown. I can’t open it."
 
+        show zeni eyes_wide concern
+
         z"Lockdown? Why?... Doesn’t matter. Let me see."
 
         "I step aside so Zeni can mess with the panel. After a moment, the door opens."
+
+        show zeni eyes_open smile relax
 
         z"Tada!"
 
@@ -474,14 +488,14 @@ label argument:
     show misha eyes_wide concern open_neutral at rightish, flipped, parallaxed_m
     with dissolve
 
-    pause 0.5
+    pause 0.7
 
     show fera eyes_open relax part_smirk
     show aran eyes_open relax smile
     show misha eyes_open relax smile
     with dissolve
 
-    "Three shocked faces stare back at us, before their expressions melt into relief."
+    "Three shocked faces stare back at us before their expressions melt into relief."
 
     a"Look! We’re saved, see?"
 
@@ -608,6 +622,8 @@ label argument:
     p"No... That’s..."
 
     show fera eyes_narrow angry part_frown
+    show misha eyes_wide frown look_away
+    show aran eyes_narrow concern part_frown
     f"Unbelievable... Of all the Six-forsaken hellholes to die on...!"
 
     "Fera is livid. She lashes out at the nearest object—which happens to be a steel table leg. My foot throbs just from watching her, but Fera just gives the table a look of furious disgust."
@@ -630,7 +646,9 @@ label argument:
 
     "Misha, who has been quiet for some time, suddenly breaks the silence."
 
-    show misha eyes_open original part_neutral
+    play music "<from 10>"+mus_build fadeout 3 fadein 2
+
+    show misha eyes_open original part_neutral look_at
     m"Maybe we won’t be."
 
     f"Oh, {i}now{/i} you have an idea?"
@@ -646,6 +664,10 @@ label argument:
     show misha eyes_open neutral original
     m"Ahem. I provided a client with a new fuel cell schematic about two weeks ago."
 
+    show fera eyes_wide part_neutral original
+    show aran eyes_wide smile
+    show zeni eyes_wide relax smile look_at
+
     "Eyes light up cautiously around the room."
 
     m"I am quite sure that the demonstration prototype remains somewhere in this hub. That being said..."
@@ -658,15 +680,22 @@ label argument:
     show zeni smile original
     z"You don’t have to tell me twice!"
 
+    hide zeni with dissolve
+
     "Zeni begins digging through shelves and containers with fervor, his previous lackadaisical attitude fading away in the face of hope for survival."
 
     show fera one_raised part_neutral
-    f"Me? Rifle through boxes? Well... if there’s no other way."
+    f"This isn’t exactly what I had on my agenda for today, but oh well..."
+
+    hide fera with dissolve
 
     p"Well, that settles it. We need that power cell. Everyone, split up."
 
     show aran angry neutral eyes_narrow
     "Misha leans against a table while everyone else gets to work, but a commanding glare from Aran motivates her to join in."
+
+    hide aran with dissolve
+    hide misha with dissolve
 
     "Just as we begin, a familiar yet unwelcome sound graces our ears."
 
@@ -684,7 +713,9 @@ label argument:
 
     stop sound
 
-    "I should just go help someone with their share. But who?"
+    "I should just go help someone with their share. Who should I talk to?"
+
+    play music "<from 15>"+mus_relax fadeout 3 fadein 5
 
     jump choices
 
