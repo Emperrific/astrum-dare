@@ -1,6 +1,6 @@
 transform leftish_zeni:
     xcenter 0.2
-    ypos 100
+    yalign 1.0
 
 transform leftish:
     xcenter 0.2
@@ -11,7 +11,7 @@ transform flipped:
 
 transform rightish_zeni:
     xcenter 0.8
-    ypos 100
+    yalign 1.0
 
 transform rightish:
     xcenter 0.8
@@ -21,5 +21,11 @@ transform mid_right:
     xcenter 0.65
     yalign 1.0
 
-transform parallaxed:
-    function parallax_char
+transform parallaxed_z:
+    function parallax_charz
+transform parallaxed_f:
+    function parallax_charf
+transform parallaxed_a:
+    function parallax_chara
+transform parallaxed_m:
+    function parallax_charm

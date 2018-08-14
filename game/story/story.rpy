@@ -275,7 +275,7 @@ label maintenence_center:
     "I dash to the person’s side. It’s a man in a security uniform. He’s not dead... I think."
 
     p"Hey! You okay?!"
-    show zeni eyes_rest concern neutral at leftish_zeni, parallaxed
+    show zeni eyes_rest concern neutral at leftish_zeni, parallaxed_z
     with dissolve
 
     show zeni eyes_rest concern neutral
@@ -401,7 +401,7 @@ label argument:
         "All of a sudden, a voice calls out to me."
 
         z"Hey! You over there!"
-        show zeni at leftish_zeni, parallaxed with moveinleft
+        show zeni at leftish_zeni, parallaxed_z with moveinleft
         "A man in a security uniform runs up to me."
         show zeni angry frown
         z"What are you doing? You should be evacuating."
@@ -461,9 +461,9 @@ label argument:
     #[fade in chill theme]
     call setup_rd_room(dissolve)
 
-    show fera eyes_wide raised open_neutral at center,flipped, parallaxed
-    show aran eyes_wide raised open_neutral at mid_right, flipped, parallaxed
-    show misha eyes_wide concern open_neutral at rightish, flipped, parallaxed
+    show fera eyes_wide raised open_neutral at center,flipped, parallaxed_f
+    show aran eyes_wide raised open_neutral at mid_right, flipped, parallaxed_a
+    show misha eyes_wide concern open_neutral at rightish, flipped, parallaxed_m
     with dissolve
 
     pause 0.5
@@ -528,7 +528,7 @@ label argument:
 
     "If she heard that, the short woman shows no sign of ruffled feathers."
 
-    show zeni concern frown at leftish_zeni, parallaxed with dissolve
+    show zeni concern frown at leftish_zeni, parallaxed_z with dissolve
     z"Uh, everyone?"
 
     show misha eyes_squint

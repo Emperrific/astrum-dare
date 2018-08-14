@@ -7,7 +7,7 @@ init python:
         store.offsety = y - centery
 
     def update_next_shake():
-        store.next_shake = renpy.random.randint(12,80)/10.0
+        store.next_shake = renpy.random.randint(12,80)/4.0
         store.really_shaking = True
         renpy.music.set_volume(renpy.random.randint(30,100)/100.0, channel="asteroid")
         store.num_shakes = renpy.random.randint(3,8)
@@ -42,10 +42,28 @@ init python:
         return 0.01
 
 
-    def parallax_char(trans, st, at):
+    def parallax_charz(trans, st, at):
         update_mouse()
         trans.xoffset = - (offsetx/15) + offsetx2/2
-        trans.yoffset = - (offsety/15) + offsety2/2
+        trans.yoffset = 100 - (offsety/15) + offsety2/2
+        return 0.01
+
+    def parallax_charf(trans, st, at):
+        update_mouse()
+        trans.xoffset = - (offsetx/14.9) + offsetx2/2
+        trans.yoffset = 100 - (offsety/15) + offsety2/2
+        return 0.01
+
+    def parallax_chara(trans, st, at):
+        update_mouse()
+        trans.xoffset = - (offsetx/15.1) + offsetx2/2
+        trans.yoffset = 100 - (offsety/15.) + offsety2/2
+        return 0.01
+
+    def parallax_charm(trans, st, at):
+        update_mouse()
+        trans.xoffset = - (offsetx/14.8) + offsetx2/2
+        trans.yoffset = 100 - (offsety/15) + offsety2/2
         return 0.01
 
     def parallax_space(trans, st, at):

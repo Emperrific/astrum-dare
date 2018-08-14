@@ -16,9 +16,9 @@ default seeds2 = [
     Processor("7", lens2[0], lens2)
     ]
 
-default task2B = Task("B", 6, "#0f0")
+default task2B = Task("B", 6, "#0f3")
 default task2E = Task("E", 4, "#f07")
-default task2F = Task("F", 6, "#7f0")
+default task2F = Task("F", 6, "#cd0")
 default task2H = Task("H", 6, "#f70")
 default task2J = Task("J", 3, "#999")
 default task2K = Task("K", 1, "#fff")

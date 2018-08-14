@@ -202,7 +202,8 @@ screen pipeline_puzzle(processors=[], tasks=[]):
                         size(len_unit * task.units, 20)
                     text task.name:
                         color "#000"
-                        yoffset -5
+                        xoffset 20
+                        yoffset -3
 
         for i in range(len(processors)):
             $processor = processors[i]
