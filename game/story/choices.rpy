@@ -675,8 +675,6 @@ label power_up:
 
         m "What happened?! What did you just do?!"
 
-        show zeni scared at center, parallaxed
-        show fera scared at cright, parallaxed
         show aran scared at right, parallaxed
 
         with moveinright

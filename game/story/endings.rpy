@@ -2,8 +2,11 @@
 label vessel_activated:
 
     "The security screen clicks, changing to show the words Vessel Activated."
-    show aran eyes_open look_at raised part_smile
-    show misha eyes_open look_at raised part_smile
+
+    show aran eyes_closed look_at raised part_smile at cright, parallaxed
+    show misha eyes_closed look_at raised part_smile at right, parallaxed
+    with moveinright
+
     a "Yes! You did it! Amazing!"
 
     "Aran and Misha are practically cheering."
@@ -475,6 +478,10 @@ label ultra_fail:
     "No way. I..."
 
     "The last ship goes into emergency lockdown."
+
+    show misha angry open_neutral eyes_wide at cright, parallaxed
+    show aran scared at right, parallaxed
+    with moveinright
 
     m "{i}What have you done?!!{/i}"
 
