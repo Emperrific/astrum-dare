@@ -674,11 +674,11 @@ label power_up:
     #If success 🡆 1 PERSON LEFT BEHIND ENDINGS
 
     #If fail
-        show misha angry open_neutral eyes_wide at left, parallaxed with moveinleft
+        show misha angry open_neutral eyes_wide at left, parallaxed_m with moveinleft
 
         m "What happened?! What did you just do?!"
 
-        show aran scared at right, parallaxed
+        show aran scared at right, parallaxed_a
 
         with moveinright
 
