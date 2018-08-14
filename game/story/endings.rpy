@@ -726,7 +726,9 @@ label ultra_fail:
 
 label end_credits:
 
-    stop music fadeout 2
+    
+    show black with Dissolve(2)
+    pause 1
     show screen credits
     pause
 
