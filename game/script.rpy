@@ -82,8 +82,8 @@ default tasks2 = [
     task2N,
     ]
 
-define lens1 = [9,8,7,6]
-define seeds1 = [
+default lens1 = [9,8,7,6]
+default seeds1 = [
     Processor("1", lens1[0], lens1),
     Processor("2", lens1[0], lens1),
     Processor("3", lens1[0], lens1),
@@ -132,11 +132,11 @@ label main_menu:
 # The game starts here.
 
 label start:
-    # call setup_sublevel(dissolve)
-    # $num_active = 0
-    # $turn_on(seeds2[0])
-    #
-    # $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+    call setup_sublevel(dissolve)
+    $num_active = 0
+    $turn_on(seeds1[0])
+    
+    $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
     #
     # if cool:
     #     "You succeeded"

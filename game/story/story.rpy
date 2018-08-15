@@ -12,9 +12,9 @@ define mus_escape = "music/07_like_an_angel_instrumental.mp3"
 
 
 define p = Character("[player_name]")
-python:
-    player_name = renpy.input("Please enter your name.")
-    player_name = player_name.strip()
+# python:
+#     player_name = renpy.input("Please enter your name.")
+#     player_name = player_name.strip()
 
 define c = Character("Corsi")
 define ai = Character("Zentri AI")
