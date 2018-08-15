@@ -88,7 +88,7 @@ label one_left:
             jump fera_lost
 
     label zeni_lost:
-
+        $renpy.fix_rollback()
         show zeni scared part_frown eyes_wide
 
         z "What...? No. No! What do you mean, stay behind?!"
@@ -158,6 +158,7 @@ label one_left:
         jump final_escape
 
     label misha_lost:
+        $renpy.fix_rollback()
         show misha eyes_wide part_frown
         show fera raised eyes_wide part_neutral
         show zeni raised eyes_wide part_neutral
@@ -221,7 +222,7 @@ label one_left:
         jump final_escape
 
     label aran_lost:
-
+        $renpy.fix_rollback()
         show fera raised eyes_wide part_neutral
         show zeni raised eyes_wide part_neutral
 
@@ -281,7 +282,7 @@ label one_left:
         jump final_escape
 
     label fera_lost:
-
+        $renpy.fix_rollback()
         show fera angry eyes_wide part_frown
         show zeni raised eyes_wide part_neutral
         show misha eyes_wide raised part_frown
@@ -417,7 +418,7 @@ label three_left:
             jump fera_lives
 
 label zeni_lives:
-
+    $renpy.fix_rollback()
     $survivor = "Zeni"
 
     show zeni eyes_wide raised part_neutral
@@ -472,7 +473,7 @@ label zeni_lives:
 
 
 label misha_lives:
-
+    $renpy.fix_rollback()
     $survivor = "Misha"
     show zeni eyes_wide raised part_neutral
     show misha eyes_wide raised neutral
@@ -523,7 +524,7 @@ label misha_lives:
     jump final_escape
 
 label aran_lives:
-
+    $renpy.fix_rollback()
     $survivor = "Aran"
     show zeni eyes_wide raised part_neutral
     show misha eyes_wide raised part_neutral
@@ -570,7 +571,7 @@ label aran_lives:
     jump final_escape
 
 label fera_lives:
-
+    $renpy.fix_rollback()
     $survivor = "Fera"
     show zeni eyes_wide raised part_neutral
     show misha eyes_wide raised part_neutral

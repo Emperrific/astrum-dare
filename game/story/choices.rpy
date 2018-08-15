@@ -21,7 +21,7 @@ label choices:
 label help_zeni:
     $talk_zeni = True
     $chat_counter += 1
-
+    $renpy.fix_rollback()
     show zeni look_at at middle, parallaxed_z with dissolve
 
     "I decide to give Zeni a hand."
@@ -205,7 +205,7 @@ label help_zeni:
             p "Okay."
 
             hide zeni with dissolve
-
+    $renpy.fix_rollback()
     if chat_counter == 3:
         jump power_up
     else:
@@ -221,7 +221,7 @@ label help_misha:
     $talk_misha = True
     $chat_counter += 1
 
-
+    $renpy.fix_rollback()
     "Of all the people in this room, the most likely one to find that power cell is probably the woman who made it."
 
     "I walk over to Misha’s corner of the room cautiously. She pays no attention to me as I approach."
@@ -387,6 +387,7 @@ label help_misha:
             "Misha doesn’t say another word, but her thanks is good enough for me."
 
             hide misha with dissolve
+    $renpy.fix_rollback()
     if chat_counter == 3:
         jump power_up
     else:
@@ -397,6 +398,7 @@ label help_misha:
 label help_aran:
     $talk_aran = True
     $chat_counter += 1
+    $renpy.fix_rollback()
 
     "Aran seems to be the most pleasant of the bunch. I’ll go help him."
 
@@ -545,6 +547,7 @@ label help_fera:
     $talk_fera = True
     $chat_counter += 1
 
+    $renpy.fix_rollback()
     "Fera seems like she’s having trouble reaching the cabinets on her corner of the room."
 
     "While I have enough sense not to comment on that, it might be good to help her out."
