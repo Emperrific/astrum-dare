@@ -40,7 +40,7 @@ label help_zeni:
 
     show zeni frown one_raised
 
-    z "Also known as glorified manager slash scapegoat, basically."
+    z "Also known as glorified manager-slash-scapegoat, basically."
 
     show zeni neutral original
 
@@ -899,7 +899,7 @@ label power_up:
     $renpy.block_rollback()
     $timedout = renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)
     $renpy.block_rollback()
-    
+
     if timedout != "timeout":
         "...This is impossible."
 
