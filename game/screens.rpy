@@ -563,7 +563,7 @@ screen about():
         imagebutton auto "back_%s.png" action Return() align(0.0,0.0)
         imagebutton auto "load_%s.png" action ShowMenu('load') align(1.0,0.0)
         imagebutton auto "options_%s.png" action ShowMenu('preferences') align(0.0, 1.0)
-        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align (1.0,0.0)
+        imagebutton auto "title_%s.png" action MainMenu() align (1.0,0.0)
 
     vbox:
         xalign 0.5
@@ -635,7 +635,7 @@ screen file_slots(title):
         else:
             imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0)
         imagebutton auto "options_%s.png" action ShowMenu('preferences') align (0.0,1.0)
-        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align(1.0,0.0)
+        imagebutton auto "title_%s.png" action MainMenu() align(1.0,0.0)
 
     grid 3 2:
         xalign 0.5
@@ -814,7 +814,7 @@ screen preferences():
         imagebutton auto "back_%s.png" action Return() align (0.0,0.0)
         imagebutton auto "load_%s.png" action ShowMenu('load') align (1.0,0.0)
         imagebutton auto "save_%s.png" action ShowMenu('save') align (0.0,1.0)
-        imagebutton auto "title_%s.png" action ShowMenu('main_menu') align(1.0,1.0)
+        imagebutton auto "title_%s.png" action MainMenu() align(1.0,1.0)
 
 
     vbox:

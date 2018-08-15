@@ -126,6 +126,7 @@ default cool = False
 
 label main_menu:
     stop music
+    scene black
     play music config.main_menu_music fadein 1.0
     call screen main_menu
     return
@@ -133,10 +134,10 @@ label main_menu:
 
 label start:
     call setup_sublevel(dissolve)
-    $num_active = 0
-    $turn_on(seeds1[0])
+    # $num_active = 0
+    # $turn_on(seeds1[0])
     
-    $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
+    # $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
     #
     # if cool:
     #     "You succeeded"

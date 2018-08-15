@@ -186,18 +186,11 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         xalign 0.9
         yalign 0.9
         textbutton "Launch":
-            action Show("puzzle_sweep", None, 50, 200, 400, 200, True, processors, tasks)
-
-    frame:
-        at delayed_fall_in
-        xalign 0.37
-        yalign 0.9
-        $time_allowed = processors[0].limits[num_active]
-        text "Available Time Before Lockdown: [time_allowed]"
+            action Show("puzzle_sweep", None, 50, 500 -(len(processors)/2*50), 400, 50 * len(processors), True, processors, tasks)
 
     vbox:
         at delayed_fall_in
-        xalign 0.9
+        xalign 0.95
         yalign 0.1
         xmaximum 500
 
@@ -214,6 +207,11 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         frame:    
             text "Hit Launch once configuration is complete to start security override."
 
+        null height 20
+        frame:
+            xalign 1.0
+            $time_allowed = processors[0].limits[num_active]
+            text "Time Before Lockdown: [time_allowed]"
         null height 20
         frame:
             xalign 1.0
