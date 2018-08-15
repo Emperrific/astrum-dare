@@ -896,7 +896,10 @@ label power_up:
     $ num_active = 0
     $turn_on(seeds3[0])
 
+    $renpy.block_rollback()
     $timedout = renpy.call_screen("pipeline_puzzle", seeds3, tasks3, 180)
+    $renpy.block_rollback()
+    
     if timedout != "timeout":
         "...This is impossible."
 
@@ -933,8 +936,9 @@ label power_up:
     $num_active = 0
     $turn_on(seeds2[0])
 
+    $renpy.block_rollback()
     $activation_success = renpy.call_screen("pipeline_puzzle", seeds2, tasks2)()
-
+    $renpy.block_rollback()
 
     if activation_success == True:
         $one_death = True
@@ -977,8 +981,9 @@ label power_up:
         $num_active = 0
         $turn_on(seeds1[0])
 
+        $renpy.block_rollback()
         $activation_success = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
-
+        $renpy.block_rollback()
 
 
         if activation_success == True:

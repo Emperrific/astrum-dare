@@ -156,24 +156,25 @@ default num_active = 0
 define len_unit = 50
 default current_drag = None
 
-screen puzzle_sweep(startx, starty, endx, height, failed=False, processors=[], tasks=[]):
-    zorder 50
+screen puzzle_confirm(processors=[], tasks=[]):
+    modal True
+    add "#0009"
+    frame:
+        at delayed_fall_in
+        align (.5,.5)
+        padding (30,30,30,30)
+        vbox:
+            xmaximum 500
+            text "Are you sure you want to validate?" xalign 0.5 size 29
+            null height 20
+            text "If your answer is incorrect, this ship will lock down." xalign 0.5
+            null height 30
+            hbox:
+                xalign 0.5
+                textbutton "Yes" action [Hide("puzzle_confirm", dissolve), Return(Function(valid_puzzle, processors, tasks))] text_size 30
+                null width 30
+                textbutton "No" action Hide("puzzle_confirm", dissolve) text_size 30
 
-    add "#000":
-        at sweep(startx, starty, endx)
-        size(10,height)
-
-    if failed:
-        timer 10 action Show("fail_sweep", None, starty, endx, height)
-    timer 10.5 action [Hide("puzzle_sweep"), Return(Function(valid_puzzle, processors, tasks))]
-
-screen fail_sweep(starty, endx, height):
-    zorder 51
-
-    add "#f00":
-        pos (endx, starty)
-        size(10,height)
-    timer 0.5 action Hide("fail_sweep")
 
 screen pipeline_puzzle(processors=[], tasks=[], time=0):
     #add "#fff"
@@ -185,16 +186,9 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         at delayed_fall_in
         xalign 0.95
         yalign 0.9
-        textbutton "Launch":
-            action Show("puzzle_sweep", None, 50, 200, 400, 200, True, processors, tasks)
-            text_size 30
-
-    frame:
-        at delayed_fall_in
-        xalign 0.37
-        yalign 0.9
-        $time_allowed = processors[0].limits[num_active]
-        text "Available Time Before Lockdown: [time_allowed]"
+        textbutton "Validate":
+            action Show("puzzle_confirm", dissolve, processors=processors, tasks=tasks)
+            text_size 35
 
     vbox:
         at delayed_fall_in
@@ -204,12 +198,12 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
 
         frame:
             xalign 1.0
-            text "To disable security protocols, fit all colored segments according to the prerequisites. Segments do not have to occupy the same line or be adjacent to satisfy the prerequisites."
+            text "To disable security protocols, fit all colored segments according to the requirements. Segments do not have to occupy the same line or be adjacent to satisfy the requirements."
 
         null height 20
         frame:
             xalign 1.0
-            text "Each additional branch enabled reduces total available area."
+            text "Each additional line enabled reduces total available area."
 
         null height 20
         frame:
@@ -284,10 +278,8 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
                                     spacing 20
                                     style_prefix "radio"
                                     textbutton "On":
-                                        #text_color "#000"
                                         action Function(turn_on, processor)
                                         selected (processor.active)
                                     textbutton "Off":
-                                        #text_color "#000"
                                         action Function(turn_off, processor)
                                         selected not processor.active

@@ -6,7 +6,7 @@
 define cright = Transform(xalign=0.75, yalign=1.0)
 define cleft = Transform(xalign=0.25, yalign=1.0)
 
-default lens3 = [16,15,14,13,13,11,10]
+default lens3 = [16,15,14,13,13,11,10,9,8]
 default seeds3 = [
     Processor("1", lens3[0], lens3),
     Processor("2", lens3[0], lens3),
@@ -44,7 +44,7 @@ default tasks3 = [
     task3N,
     ]
 
-default lens2 = [16,15,14,13,12,11,10]
+default lens2 = [16,15,14,13,12,11,10,9,8]
 default seeds2 = [
     Processor("1", lens2[0], lens2),
     Processor("2", lens2[0], lens2),
@@ -136,7 +136,7 @@ label start:
     call setup_sublevel(dissolve)
     # $num_active = 0
     # $turn_on(seeds1[0])
-    
+
     # $cool = renpy.call_screen("pipeline_puzzle", seeds1, tasks1)()
     #
     # if cool:
