@@ -108,7 +108,7 @@ init python:
         def get_dep_str(self):
             if not len(self.dependencies):
                 return None
-            return "{} is after {}".format(self.name, ", ".join((d.name for d in self.dependencies)))
+            return "{} right of {}".format(self.name, ", ".join((d.name for d in self.dependencies)))
 
     all_processors = []
     all_tasks = []
@@ -160,23 +160,31 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
 
     frame:
         at delayed_fall_in
-        xalign 0.9
+        xalign 0.95
         yalign 0.9
         textbutton "Validate":
             action Return(Function(valid_puzzle,processors, tasks))
+            text_size 30
 
     vbox:
         at delayed_fall_in
-        xalign 0.9
+        xalign 0.93
         yalign 0.1
         xmaximum 500
 
         frame:
-            text "To disable security protocols, fit all bars onto the powered slots while fulfilling prerequisites."
+            xalign 1.0
+            text "To disable security protocols, fit all colored segments according to the prerequisites. Segments do not have to occupy the same line or be adjacent to satisfy the prerequisites."
 
         null height 20
         frame:
-            text "Each slot enabled reduces available area on all."
+            xalign 1.0
+            text "Each additional branch enabled reduces total available area."
+
+        null height 20
+        frame:
+            xalign 1.0
+            add "graphical_explanation" zoom 0.7
 
         null height 20
         frame:
