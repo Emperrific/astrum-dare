@@ -1321,7 +1321,7 @@ screen confirm(message, yes_action, no_action):
         vbox:
             xalign .5
             yalign .5
-            spacing 30
+            spacing 20
 
             label _(message):
                 style "confirm_prompt"

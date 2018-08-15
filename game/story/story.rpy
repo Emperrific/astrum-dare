@@ -242,6 +242,7 @@ label story:
     menu:
         with dissolve
         "Life Support Center":
+                $renpy.fix_rollback()
                 p"Might as well go with the closest."
 
                 "I hurry over to the door of the Life Support Center."
@@ -273,7 +274,7 @@ label story:
 
 
 label maintenence_center:
-
+    $renpy.fix_rollback()
     $zeni_met = True
 
     p"Maintenance seems like a safe bet."
@@ -375,6 +376,7 @@ label maintenence_center:
     jump argument
 
 label r_and_d:
+    $renpy.fix_rollback()
 
     p"I’ll just go with the Research & Development Hub, then." with dissolve
 
