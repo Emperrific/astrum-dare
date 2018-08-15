@@ -147,10 +147,33 @@ transform delayed_fall_in(t=0):
     pause t
     easein 1 alpha 1 zoom 1 rotate 0 offset (0,0)
 
+transform sweep(startx, starty, endx):
+    xpos startx
+    ypos starty
+    linear 10.0 xpos endx
+
 default num_active = 0
 define len_unit = 50
 default current_drag = None
 
+screen puzzle_sweep(startx, starty, endx, height, failed=False, processors=[], tasks=[]):
+    zorder 50
+
+    add "#000":
+        at sweep(startx, starty, endx)
+        size(10,height)
+
+    if failed:
+        timer 10 action Show("fail_sweep", None, starty, endx, height)
+    timer 10.5 action [Hide("puzzle_sweep"), Return(Function(valid_puzzle, processors, tasks))]
+
+screen fail_sweep(starty, endx, height):
+    zorder 51
+
+    add "#f00":
+        pos (endx, starty)
+        size(10,height)
+    timer 0.5 action Hide("fail_sweep")
 
 screen pipeline_puzzle(processors=[], tasks=[], time=0):
     #add "#fff"
@@ -162,9 +185,16 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         at delayed_fall_in
         xalign 0.95
         yalign 0.9
-        textbutton "Validate":
-            action Return(Function(valid_puzzle,processors, tasks))
+        textbutton "Launch":
+            action Show("puzzle_sweep", None, 50, 200, 400, 200, True, processors, tasks)
             text_size 30
+
+    frame:
+        at delayed_fall_in
+        xalign 0.37
+        yalign 0.9
+        $time_allowed = processors[0].limits[num_active]
+        text "Available Time Before Lockdown: [time_allowed]"
 
     vbox:
         at delayed_fall_in
@@ -190,7 +220,7 @@ screen pipeline_puzzle(processors=[], tasks=[], time=0):
         frame:
             xalign 1.0
             vbox:
-                text "Prerequisites: "
+                text "Requirements: "
                 for task in tasks:
                     $s = task.get_dep_str()
                     if s:
