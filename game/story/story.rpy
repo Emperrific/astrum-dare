@@ -559,6 +559,7 @@ label argument:
     m"Who’s this... peon?"
 
     show zeni one_raised
+    show aran neutral
     z"Misha, we’ve met at least 4 times..."
 
     "I’ll take that to mean that the woman in the lab coat’s name is Misha."
@@ -580,12 +581,13 @@ label argument:
 
     p"Wait. Mycia as in the colony?"
 
-    show fera smirk
+    show fera smirk look_at
     f"Very good. Yes. My... organization... is the proprietor of Mycia Beta’s colonization efforts."
 
     "Wow. This is kind of terrifying. A governor is one thing, but... this woman is one of the richest people in our solar system."
 
     show zeni concern frown look_at
+    show aran look_away raised neutral
     z"Anyway, now that we’re all friends, I have bad news."
 
     m"What could possibly be worse news at this stage?"
@@ -597,6 +599,7 @@ label argument:
     f"And...?"
 
     show zeni eyes_squint
+    show aran eyes_wide scared part_frown
     z"They were removing the power cores from the ships in the auxiliary dock. For refueling."
 
     #[fade out music to silence]
@@ -629,12 +632,13 @@ label argument:
     f"Unbelievable... Of all the Six-forsaken hellholes to die on...!"
 
     "Fera is livid. She lashes out at the nearest object—which happens to be a steel table leg. My foot throbs just from watching her, but Fera just gives the table a look of furious disgust."
-
+    show misha eyes_narrow angry frown look_away
     "Aran is pacing nervously, but Misha is standing perfectly still, brows furrowed and arms crossed."
 
+    show aran eyes_rest frown concern
     "Pausing with a deep breath, Aran tries his best to comfort the group."
 
-    show aran eyes_open neutral concern
+    show aran eyes_open neutral look_at concern
     a"Surely there is something we can do. We must not give up."
 
     z"Wish I shared your optimism, Governor."
@@ -644,6 +648,7 @@ label argument:
 
     f"As if it matters what he calls you? We’re all going to be dead soon anyway."
 
+    show aran frown eyes_narrow concern look_away
     "A depressing hush falls over the group."
 
     "Misha, who has been quiet for some time, suddenly breaks the silence."
@@ -652,6 +657,8 @@ label argument:
 
     show misha eyes_open original part_neutral look_at
     m"Maybe we won’t be."
+
+    show aran part_smile scared look_at
 
     f"Oh, {i}now{/i} you have an idea?"
 
@@ -686,7 +693,7 @@ label argument:
 
     "Zeni begins digging through shelves and containers with fervor, his previous lackadaisical attitude fading away in the face of hope for survival."
 
-    show fera one_raised part_neutral
+    show fera look_away one_raised part_neutral
     f"This isn’t exactly what I had on my agenda for today, but oh well..."
 
     hide fera with dissolve
@@ -696,8 +703,8 @@ label argument:
     show aran angry neutral eyes_narrow
     "Misha leans against a table while everyone else gets to work, but a commanding glare from Aran motivates her to join in."
 
-    hide aran with dissolve
     hide misha with dissolve
+    hide aran with dissolve
 
     "Just as we begin, a familiar yet unwelcome sound graces our ears."
 

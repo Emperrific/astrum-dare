@@ -833,8 +833,10 @@ label power_up:
 
     a "Alright. You heard what [player_name] said. Let’s all live through this. Go!"
 
-    hide fera with easeoutleft
+    hide zeni with None
+    show zeni one_raised eyes_wide at leftish, flipped, parallaxed_z
     hide zeni with easeoutleft
+    hide fera with easeoutleft
 
     "Aran’s command is like a firecracker; everyone sprints in their respective directions."
 

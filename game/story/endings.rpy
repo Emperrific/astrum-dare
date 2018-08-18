@@ -692,6 +692,23 @@ label ultra_fail:
     m "You’ve killed us. You complete and total imbecile... you’ve killed us all!"
     show aran eyes_narrow look_away neutral
     "Aran’s gaze is focused on the view of Mycia Beta."
+
+    $ renpy.sound.play("Alarm_Loop.ogg")
+
+    show alarm
+
+    ai "Warning: Catastrophic damage to multiple sectors detected."
+
+    ai "Warning: Life support systems are offline."
+
+    ai "Oxygen levels at: 98\%. Time until depletion: 6 minutes."
+
+    hide alarm with Dissolve(1.5)
+
+    stop sound
+
+    "The life support? No way..."
+
     show misha eyes_rest
     m "Why did we put our lives in your hands? I should have just done this myself, I should have..."
     show misha eyes_squint scared neutral
